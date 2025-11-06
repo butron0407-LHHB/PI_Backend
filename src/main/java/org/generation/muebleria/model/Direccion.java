@@ -45,7 +45,7 @@ public class Direccion {
     private Usuarios usuarios;
 
     //relacion uno a muchos con pedidos
-    @OneToMany(mappedBy = "pedidos", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "direccion", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonBackReference // Lado "trasero" para evitar bucles
     private List<Pedidos> pedidos;
 }

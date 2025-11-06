@@ -28,7 +28,7 @@ public class Roles {
 
     // --- Relación: Un Rol puede tener muchos Usuarios ---
     // La gestionamos aquí para evitar bucles JSON
-    @OneToMany(mappedBy = "rol", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "roles", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference // Lado "trasero": no se serializa para evitar bucles
     private List<Usuarios> usuarios;
 

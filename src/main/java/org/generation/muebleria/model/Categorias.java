@@ -36,7 +36,7 @@ public class Categorias {
     private Categorias categoriaPadre;
 
     // --- Relación: Una categoría (padre) puede tener muchas categorías (hijas) ---
-    @OneToMany(mappedBy = "categoriaPadre", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "categoriaPadre", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonBackReference // Lado "trasero" para evitar bucles
     private List<Categorias> subCategorias;
 

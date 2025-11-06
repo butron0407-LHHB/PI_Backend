@@ -44,7 +44,7 @@ public class Proveedores {
     @Column(name = "fecha_actualizacion", columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime fechaActualizacion;
 
-    @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "proveedores", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Productos> productos;
 
 }

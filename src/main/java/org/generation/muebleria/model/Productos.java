@@ -59,12 +59,12 @@ public class Productos {
     private Proveedores proveedores;
 
     // --- Relación uno a muchos reseñas
-    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "productos", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference // Lado "trasero" para evitar bucles
     private List<Resenas> resenas;
 
     // --- Relación uno a muchos detalles pedido
-    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "productos", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference // Lado "trasero" para evitar bucles
     private List<DetallesPedido> detallesPedido;
 

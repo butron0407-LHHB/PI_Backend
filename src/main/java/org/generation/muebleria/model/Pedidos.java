@@ -26,12 +26,6 @@ public class Pedidos {
     @Column(name="id_pedido")
     private Long idPedido;
 
-    @Column(name="is_usuario", nullable = false)
-    private Integer idUsuario;
-
-    @Column(name="is_direccion", nullable = false)
-    private Integer idDireccion;
-
     @Column(name = "estado_pedido", nullable = false)
     private EstadoPedido estadoPedido;
 
@@ -57,12 +51,12 @@ public class Pedidos {
     private Facturas facturas;
 
     // --- Relación uno a muchos reseñas
-    @OneToMany(mappedBy = "resena", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "pedidos", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference // Lado "trasero" para evitar bucles
     private List<Resenas> resenas;
 
     // --- Relación uno a muchos detalles pedido
-    @OneToMany(mappedBy = "detallesPedido", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "pedidos", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference // Lado "trasero" para evitar bucles
     private List<DetallesPedido> detallesPedidos;
 

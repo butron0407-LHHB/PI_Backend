@@ -22,7 +22,7 @@ public class FacturaService implements IFacturaService {
     @Override
     public Facturas generarFactura(Long idPedido, FacturaRequest request) {
         // 1. Verificar que el pedido exista
-        Pedidos pedido = pedidosRepository.findById(idPedido).orElseThrow(
+        /*Pedidos pedido = pedidosRepository.findById(idPedido).orElseThrow(
                 () -> new IllegalArgumentException("El pedido con ID " + idPedido + " no existe.")
         );
 
@@ -52,8 +52,11 @@ public class FacturaService implements IFacturaService {
 
         // 7. Guardar en la BD
         return facturasRepository.save(nuevaFactura);
-    }
 
+         */
+        return null;
+    }
+;
     @Override
     public Facturas getFacturaById(Long idFactura) {
         return facturasRepository.findById(idFactura).orElseThrow(
@@ -63,9 +66,10 @@ public class FacturaService implements IFacturaService {
 
     @Override
     public Facturas getFacturaByPedidoId(Long idPedido) {
-        return facturasRepository.findByPedido_Id(idPedido).orElseThrow(
+        return null;
+                /*facturasRepository.findByPedido_Id(idPedido).orElseThrow(
                 () -> new IllegalArgumentException("No se encontró factura para el pedido " + idPedido)
-        );
+        );*/
     }
 
     @Override

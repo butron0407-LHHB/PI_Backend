@@ -62,12 +62,12 @@ public class Usuarios {
     private List<Resenas> resenas;
 
     // --- Relación uno a muchos pedidos
-    @OneToMany(mappedBy = "usuarios;", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "usuarios", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference // Lado "trasero" para evitar bucles
     private List<Pedidos> pedidos;
 
     // --- Relación uno a muchos direcciones
-    @OneToMany(mappedBy = "usuarios;", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "usuarios", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference // Lado "trasero" para evitar bucles
     private List<Direccion> direccion;
 }
