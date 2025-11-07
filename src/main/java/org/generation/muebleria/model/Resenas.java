@@ -17,36 +17,28 @@ public class Resenas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_resena")
-    private Integer idResena;
-
+    private Long idResena;
     @Column(name = "calificacion", nullable = false)
     private Integer calificacion;
-
     @Column(name = "comentario", columnDefinition = "TEXT")
     private String comentario;
-
-    @Column(name = "resena_visible", nullable = false)
+    @Column(name = "resena_visible", columnDefinition = "TINYINT(1)")
     private Boolean resenaVisible = true;
-
-    @CreationTimestamp
-    @Column(name = "fecha_resena", updatable = false)
+    @Column(name = "fecha_resena",insertable = false, updatable = false)
     private LocalDateTime fechaResena;
 
-    @Column(name = "activo", nullable = false)
-    private Boolean activo = true;
-
-    //Relacion Muchos a Uno productos
+    // Relacion:  muchos -> uno (Productos)
     @ManyToOne
     @JoinColumn(name = "id_producto", nullable = false)
-    private Productos productos;
+    private Productos producto;
 
-    //Relacion Muchos a Uno usuarios
+    //Relacion: muchos -> uno (Usuarios)
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
-    private Usuarios usuarios;
+    private Usuarios usuario;
 
-    //Relacion Muchos a Uno pedidos
+    //Relacion: muchos -> uno (Pedidos)
     @ManyToOne
     @JoinColumn(name = "id_pedido", nullable = false)
-    private Pedidos pedidos;
+    private Pedidos pedido;
 }

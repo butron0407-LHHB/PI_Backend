@@ -23,51 +23,43 @@ public class Usuarios {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_usuario")
     private Long idUsuario;
-
-    @Column(name="id_roll", nullable = false)
-    private Integer idRoll;
-
     @Column(name="nombre", nullable = false, length = 150)
     private String nombre;
-
     @Column(name="apellidos", nullable = false, length = 150)
     private String apellidos;
-
     @Column(name="password_hash", nullable = false, length = 500)
     private String passwordHas;
-
     @Column(name="telefono", nullable = false, length = 150)
     private String telefono;
-
-    @Column(name="email", nullable = false, length = 150, unique = true)
-    private String email;
-
-    @Column(name = "activo", nullable = false)
+    @Column(name="correo", nullable = false, length = 150, unique = true)
+    private String correo;
+    @Column(name = "activo", columnDefinition = "TINYINT(1)")
     private Boolean activo = true;
-
-    @Column(name = "fecha_registro", nullable = false, updatable = false)
-    private LocalDateTime fechaRegistro = LocalDateTime.now();
-
-    @Column(name = "fecha_actualizacion", nullable = false)
+    @Column(name = "fecha_registro", insertable = false, updatable = false)
+    private LocalDateTime fechaRegistro;
+    @Column(name = "fecha_actualizacion", nullable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime fechaActualizacion = LocalDateTime.now();
 
-    //Relacion Muchos a Uno roles
+    //Relacion: muchos -> uno (Roles)
     @ManyToOne
     @JoinColumn(name = "id_rol", nullable = false)
-    private Roles roles;
+    private Roles rol;
 
-    // --- Relación uno a muchos reseñas
-    @OneToMany(mappedBy = "usuarios", cascade = CascadeType.ALL, orphanRemoval = true)
+    //Relacion: uno -> muchos (Resenas)
+    //(Resenas) -> se definio [usuario] para el mappedBy
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference // Lado "trasero" para evitar bucles
     private List<Resenas> resenas;
 
-    // --- Relación uno a muchos pedidos
-    @OneToMany(mappedBy = "usuarios;", cascade = CascadeType.ALL, orphanRemoval = true)
+    //Relacion: uno -> muchos (Pedidos)
+    //(Pedidos) -> se definio [usuario] para el mappedBy
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference // Lado "trasero" para evitar bucles
     private List<Pedidos> pedidos;
 
-    // --- Relación uno a muchos direcciones
-    @OneToMany(mappedBy = "usuarios;", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference // Lado "trasero" para evitar bucles
-    private List<Direccion> direccion;
+    //Relacion: uno -> muchos (Direccion)
+    //(Direccion) -> se definio [usuario] para el mappedBy
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
+    private List<Direccion> direcciones;
 }

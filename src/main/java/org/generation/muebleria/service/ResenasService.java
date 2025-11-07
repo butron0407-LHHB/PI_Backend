@@ -15,25 +15,25 @@ public class ResenasService implements IResenasService {
     private ResenasRepository resenasRepository;
 
     // Implementación de los métodos de la interface (IResenasService)
-    @Override
-    public List<Resenas> getAllResenasActive() {
-        return resenasRepository.findByActivoTrue();
-    }
+//    @Override
+//    public List<Resenas> getAllResenasActive() {
+//        return resenasRepository.findByActivoTrue();
+//    }
 
     @Override
-    public Resenas getResenasById(Integer id) {
+    public Resenas getResenasById(Long id) {
         return resenasRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Reseña no encontrada con id: " + id));
     }
 
     @Override
     public Resenas createResenas(Resenas resenas) {
-        resenas.setActivo(true);
+        resenas.setResenaVisible(true);
         return resenasRepository.save(resenas);
     }
 
     @Override
-    public Resenas updateResenasById(Integer id, Resenas updateResenas) {
+    public Resenas updateResenasById(Long id, Resenas updateResenas) {
         Resenas resenaExistente = getResenasById(id);
 
         if (updateResenas.getCalificacion() != null) {
@@ -50,9 +50,9 @@ public class ResenasService implements IResenasService {
     }
 
     @Override
-    public Resenas deleteResenasById(Integer id) {
+    public Resenas deleteResenasById(Long id) {
         Resenas resena = getResenasById(id);
-        resena.setActivo(false);
+        resena.setResenaVisible(false);
         return resenasRepository.save(resena);
     }
 }

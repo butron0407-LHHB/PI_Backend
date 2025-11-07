@@ -4,16 +4,18 @@ import org.generation.muebleria.model.Categorias;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
-public interface CategoriaRepository extends JpaRepository<Categorias, Integer> {
+public interface CategoriaRepository extends JpaRepository<Categorias, Long> {
 
-    // Método para listar solo categorías activas
+    //Métodopara listar solo categorías activas
     List<Categorias> findByActivoTrue();
+    Optional<Categorias> findByNombreCategoria(String nombreCategoria);
 
-    // Método útil para buscar subcategorías (hijas) de una categoría padre
-    List<Categorias> findByCategoriaPadreIdCategoriaAndActivoTrue(Integer idCategoriaPadre);
+    // Métodoutil para buscar subcategorías (hijas) de una categoría padre
+    List<Categorias> findByCategoriaPadreIdCategoriaAndActivoTrue(Long idCategoriaPadre);
 
-    // Método útil para buscar categorías principales (las que no tienen padre)
+    // Métodoutil para buscar categorías principales (las que no tienen padre)
     List<Categorias> findByCategoriaPadreIsNullAndActivoTrue();
 
 }

@@ -5,13 +5,13 @@ import java.util.List;
 
 public interface IDetallesPedidoService {
 
-    List<DetallesPedido> getAllDetallesPedidoActive();
+    //List<DetallesPedido> getAllDetallesPedidoActive();
 
-    DetallesPedido getDetallesPedidoById(Integer id);
+    DetallesPedido getDetallesPedidoById(Long id);
 
     DetallesPedido createDetallesPedido(DetallesPedido detallesPedido);
 
-    DetallesPedido updateDetallesPedidoById(Integer id, DetallesPedido updateDetallesPedido);
+    DetallesPedido updateDetallesPedidoById(Long id, DetallesPedido updateDetallesPedido);
 
-    DetallesPedido deleteDetallesPedidoById(Integer id);
+    DetallesPedido deleteDetallesPedidoById(Long id);
 }

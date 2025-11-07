@@ -16,28 +16,23 @@ public class DetallesPedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_detalle")
-    private Integer idDetalle;
-
+    private Long idDetalle;
     @Column(name = "cantidad", nullable = false)
     private Integer cantidad;
-
     @Column(name = "precio_unitario", nullable = false, precision = 10, scale = 2)
     private BigDecimal precioUnitario;
-
     @Column(name = "subtotal", nullable = false, precision = 10, scale = 2)
     private BigDecimal subtotal;
 
-    @Column(name = "activo", nullable = false)
-    private Boolean activo = true;
 
-    //Relacion mucho a uno productos
+    //Relacion: muchos -> uno (Productos)
     @ManyToOne
     @JoinColumn(name="id_producto", nullable = false)
-    private Productos productos;
+    private Productos producto;
 
-    //Relacion mucho a uno pedidos
+    //Relacion: muchos -> uno (Pedidos)
     @ManyToOne
     @JoinColumn(name="id_pedidos", nullable = false)
-    private Pedidos pedidos;
+    private Pedidos pedido;
 
 }

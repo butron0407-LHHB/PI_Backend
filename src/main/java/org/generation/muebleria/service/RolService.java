@@ -22,7 +22,7 @@ public class RolService implements IRolService {
     }
 
     @Override
-    public Roles getRolById(Integer id) {
+    public Roles getRolById(Long id) {
         return rolRepository.findById(id).orElse(null);
     }
 
@@ -38,7 +38,7 @@ public class RolService implements IRolService {
     }
 
     @Override
-    public Roles updateRolById(Integer id, Roles rolActualizado) {
+    public Roles updateRolById(Long id, Roles rolActualizado) {
         // 1. Buscamos el rol
         Optional<Roles> rolExistente = rolRepository.findById(id);
 
@@ -55,7 +55,7 @@ public class RolService implements IRolService {
     }
 
     @Override
-    public void deleteRolById(Integer id) {
+    public void deleteRolById(Long id) {
         // A diferencia de Categorias, Roles no tiene 'activo',
         // así que aplicamos un borrado físico (Hard Delete).
         rolRepository.deleteById(id);

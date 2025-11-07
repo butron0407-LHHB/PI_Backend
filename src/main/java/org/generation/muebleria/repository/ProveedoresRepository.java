@@ -10,6 +10,6 @@ import java.util.Optional;
 public interface ProveedoresRepository extends JpaRepository<Proveedores, Long> {
 
     // Buscar proveedores activos
-    List<Proveedores> findByAcivoTrue();
-
+    List<Proveedores> findByActivoTrue();
+    Optional<Proveedores> findByNombreEmpresa(String nombreEmpresa);
 }

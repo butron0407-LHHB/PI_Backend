@@ -17,27 +17,25 @@ import java.util.List;
 @Setter
 @Getter
 public class Categorias {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_categoria")
-    private Integer idCategoria;
-
-    @Column(name="nombre_categoria", unique = true, length = 100)
+    private Long idCategoria;
+    @Column(name="nombre_categoria", unique = true, nullable = false, length = 100)
     private String nombreCategoria;
-
-    @Column(name="activo")
+    @Column(name="activo", columnDefinition = "TINYINT(1)")
     private Boolean activo = true;
 
-    // --- Relación: Muchas categorías (hijas) pueden tener una categoría (padre) ---
+    // Relacion:  uno -> muchos (Productos)
+    //(Productos) -> se definio [categoria] para el mappedBy
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Productos> productos;
+
+    //relacion que se apunta a si misma (para categorias anidadas)
     @ManyToOne
-    @JoinColumn(name = "id_categoria_padre", nullable = false)
-    @JsonManagedReference // Lado "principal" de la relación
+    @JoinColumn(name = "id_categoria_padre", nullable = true)
+    @JsonBackReference
     private Categorias categoriaPadre;
 
-    // --- Relación: Una categoría (padre) puede tener muchas categorías (hijas) ---
-    @OneToMany(mappedBy = "categoriaPadre", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference // Lado "trasero" para evitar bucles
-    private List<Categorias> subCategorias;
 
 }

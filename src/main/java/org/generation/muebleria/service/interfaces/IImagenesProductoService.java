@@ -6,15 +6,15 @@ import java.util.List;
 public interface IImagenesProductoService {
 
     // Obtener todas las imágenes de un producto
-    List<ImagenesProducto> getImagesByProductId(Integer idProducto);
+    List<ImagenesProducto> getImagesByProductId(Long idProducto);
 
     // Obtener una imagen específica por su ID
-    ImagenesProducto getImageById(Integer id);
+    ImagenesProducto getImageById(Long id);
 
     // Guardar una nueva imagen (asociada a un producto)
     ImagenesProducto createImage(ImagenesProducto imagen);
 
     // Borrar una imagen por su ID
-    void deleteImageById(Integer id);
+    void deleteImageById(Long id);
 
 }

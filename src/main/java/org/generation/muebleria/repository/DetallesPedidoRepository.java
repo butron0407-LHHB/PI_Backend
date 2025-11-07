@@ -7,17 +7,17 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
-public interface DetallesPedidoRepository extends JpaRepository<DetallesPedido, Integer> {
+public interface DetallesPedidoRepository extends JpaRepository<DetallesPedido, Long> {
 
-    // Métodopara encontrar los detalles de pedido activos
-    List<DetallesPedido> findByActivoTrue();
+//    // Métodopara encontrar los detalles de pedido activos
+//    List<DetallesPedido> findByActivoTrue();
 
     // Buscar por cantidad
-    List<DetallesPedido> findByCantidad(Integer cantidad);
+    List<DetallesPedido> findByCantidad(Long cantidad);
 
     // Buscar por subtotal mayor a cierto valor
     List<DetallesPedido> findBySubtotalGreaterThan(BigDecimal subtotal);
 
-    // Buscar activos ordenados por subtotal
-    List<DetallesPedido> findByActivoTrueOrderBySubtotalDesc();
+//    // Buscar activos ordenados por subtotal
+//    List<DetallesPedido> findByActivoTrueOrderBySubtotalDesc();
 }

@@ -16,12 +16,12 @@ public class ImagenesProductoService implements IImagenesProductoService {
     public ImagenesProductoRepository imagenesProductoRepository;
 
     @Override
-    public List<ImagenesProducto> getImagesByProductId(Integer idProducto) {
+    public List<ImagenesProducto> getImagesByProductId(Long idProducto) {
         return imagenesProductoRepository.findByProductoIdProducto(idProducto);
     }
 
     @Override
-    public ImagenesProducto getImageById(Integer id) {
+    public ImagenesProducto getImageById(Long id) {
         return imagenesProductoRepository.findById(id).orElse(null);
     }
 
@@ -33,7 +33,7 @@ public class ImagenesProductoService implements IImagenesProductoService {
     }
 
     @Override
-    public void deleteImageById(Integer id) {
+    public void deleteImageById(Long id) {
         // Esta tabla no tiene borrado lógico (soft delete),
         // así que la eliminamos físicamente.
         imagenesProductoRepository.deleteById(id);

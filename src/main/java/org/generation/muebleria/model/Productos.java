@@ -43,34 +43,37 @@ public class Productos {
     private Boolean activo = true;
     @Column(name="stock_disponible")
     private Integer stockDisponible;
-    @Column(name="fecha_pedido", updatable = false)
-    private LocalDateTime fechaPedido = LocalDateTime.now();
-    @Column(name="fecha_actualizacion")
+    @Column(name="fecha_pedido", insertable = false, updatable = false)
+    private LocalDateTime fechaPedido;
+    @Column(name="fecha_actualizacion", nullable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime fechaActualizacion = LocalDateTime.now();
 
-        //Relacion Muchos a Uno en Categoría
+    // Relacion:  muchos -> uno (Categorias)
     @ManyToOne
     @JoinColumn(name = "id_categoria", nullable = false)
     private Categorias categoria;
 
-    //Relacion Muchos a Uno Proveedores
+    //Relacion: muchos -> uno (Proveedores)
     @ManyToOne
-    @JoinColumn(name = "id_proveedores", nullable = false)
-    private Proveedores proveedores;
+    @JoinColumn(name = "id_proveedor", nullable = false)
+    private Proveedores proveedor;
 
-    // --- Relación uno a muchos reseñas
+    //Relacion:  uno -> muchos (Resena)
+    //(Resena) -> se definio [producto] para el mappedBy
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference // Lado "trasero" para evitar bucles
+    @JsonBackReference
     private List<Resenas> resenas;
 
-    // --- Relación uno a muchos detalles pedido
+    //Relación: uno -> muchos (DetallesPedido)
+    //(DetallesPedido) -> se definio [producto] para el mappedBy
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference // Lado "trasero" para evitar bucles
+    @JsonBackReference
     private List<DetallesPedido> detallesPedido;
 
-    // --- Relación uno a muchos detalles imagenes
+    //Relación: uno -> muchos (ImagenesProducto)
+    //(ImagenesProducto) -> se definio [producto] para el mappedBy
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference // Lado "trasero" para evitar bucles
+    @JsonBackReference
     private List<ImagenesProducto> imagenesProducto;
 
 

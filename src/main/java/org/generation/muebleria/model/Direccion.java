@@ -20,9 +20,7 @@ public class Direccion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_direccion")
     private Long idDireccion;
-
     @Column(name = "tipo_direccion", nullable = false)
-    @Enumerated(EnumType.STRING) // Almacena el nombre del Enum como STRING en la DB
     private TipoDireccion tipoDireccion;
     @Column(name = "alias", nullable = false, length = 150)
     private String alias;
@@ -39,18 +37,20 @@ public class Direccion {
     @Column(name = "es_predeterminada", columnDefinition = "TINYINT(1)")
     private Boolean esPredeterminada = false;
 
-    //relacion muchos a uno usuario
+    //Relacion: muchos -> uno (Usuario)
     @ManyToOne
     @JoinColumn(name="id_usuario", nullable = false)
-    private Usuarios usuarios;
+    private Usuarios usuario;
 
-    //relacion uno a muchos con pedidos
-    @OneToMany(mappedBy = "pedidos", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference // Lado "trasero" para evitar bucles
+    //Relacion: uno -> muchos (Pedidos)
+    //(Pedidos) -> se definio [direccion] para el mappedBy
+    @OneToMany(mappedBy = "direccion", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
     private List<Pedidos> pedidos;
 }
 
 enum TipoDireccion {
-    ENVIO, FACTURACION, ENVIO_Y_FACTURACION
-
+    ENVIO,
+    FACTURACION,
+    ENVIO_Y_FACTURACION
 }

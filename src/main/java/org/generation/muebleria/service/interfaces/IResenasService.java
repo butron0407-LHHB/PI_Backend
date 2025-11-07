@@ -5,10 +5,10 @@ import java.util.List;
 
 public interface IResenasService {
 
-    List<Resenas> getAllResenasActive();
+//    List<Resenas> getAllResenasActive();
 
-    Resenas getResenasById(Integer id);
+    Resenas getResenasById(Long id);
     Resenas createResenas(Resenas resenas);
-    Resenas updateResenasById(Integer id, Resenas updateResenas);
-    Resenas deleteResenasById(Integer id);
+    Resenas updateResenasById(Long id, Resenas updateResenas);
+    Resenas deleteResenasById(Long id);
 }

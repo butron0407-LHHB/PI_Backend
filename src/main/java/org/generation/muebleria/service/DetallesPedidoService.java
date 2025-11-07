@@ -15,25 +15,24 @@ public class DetallesPedidoService implements IDetallesPedidoService {
     private DetallesPedidoRepository detallesPedidoRepository;
 
     // Implementación de los métodos de la interface (IDetallesPedidoService)
-    @Override
-    public List<DetallesPedido> getAllDetallesPedidoActive() {
-        return detallesPedidoRepository.findByActivoTrue();
-    }
+//    @Override
+//    public List<DetallesPedido> getAllDetallesPedidoActive() {
+//        return detallesPedidoRepository.findByActivoTrue();
+//    }
 
     @Override
-    public DetallesPedido getDetallesPedidoById(Integer id) {
+    public DetallesPedido getDetallesPedidoById(Long id) {
         return detallesPedidoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Detalle de pedido no encontrado con id: " + id));
     }
 
     @Override
     public DetallesPedido createDetallesPedido(DetallesPedido detallesPedido) {
-        detallesPedido.setActivo(true);
         return detallesPedidoRepository.save(detallesPedido);
     }
 
     @Override
-    public DetallesPedido updateDetallesPedidoById(Integer id, DetallesPedido updateDetallesPedido) {
+    public DetallesPedido updateDetallesPedidoById(Long id, DetallesPedido updateDetallesPedido) {
         DetallesPedido detalleExistente = getDetallesPedidoById(id);
 
         if (updateDetallesPedido.getCantidad() != null) {
@@ -50,9 +49,8 @@ public class DetallesPedidoService implements IDetallesPedidoService {
     }
 
     @Override
-    public DetallesPedido deleteDetallesPedidoById(Integer id) {
+    public DetallesPedido deleteDetallesPedidoById(Long id) {
         DetallesPedido detalle = getDetallesPedidoById(id);
-        detalle.setActivo(false);
         return detallesPedidoRepository.save(detalle);
     }
 }

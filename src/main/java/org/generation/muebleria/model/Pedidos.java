@@ -20,63 +20,49 @@ import java.util.List;
 @Setter
 @Getter
 public class Pedidos {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_pedido")
     private Long idPedido;
-
-    @Column(name="is_usuario", nullable = false)
-    private Integer idUsuario;
-
-    @Column(name="is_direccion", nullable = false)
-    private Integer idDireccion;
-
     @Column(name = "estado_pedido", nullable = false)
     private EstadoPedido estadoPedido;
-
     @Column(name = "total", nullable = false, precision = 10, scale = 2)
     private BigDecimal total;
-
     @Column(name = "costo_envio", nullable = false, precision = 10, scale = 2)
     private BigDecimal costoEnvio;
-
     @Column(name = "numero_guia", nullable = false, length = 150)
     private String numeroGuia;
-
-    @Column(name = "fecha_pedido", nullable = false, updatable = false)
+    @Column(name = "fecha_pedido", insertable = false, updatable = false)
     private LocalDateTime fechaPedido;
-
-    @Column(name = "fecha_actualizacion", nullable = false)
+    @Column(name = "fecha_actualizacion", nullable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime fechaActualizacion;
 
-    //Relacion de uno a uno con factura
+    //Relacion: uno -> uno (facturas)
     @OneToOne
     @JoinColumn(name = "id_factura")
     @JsonIgnore
-    private Facturas facturas;
+    private Facturas factura;
 
-    // --- Relación uno a muchos reseñas
-    @OneToMany(mappedBy = "resena", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference // Lado "trasero" para evitar bucles
+    //Relacion uno -> muchos (Resenas)
+    //(Resenas) -> se definio [pedido] para el mappedBy
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
     private List<Resenas> resenas;
 
-    // --- Relación uno a muchos detalles pedido
-    @OneToMany(mappedBy = "detallesPedido", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference // Lado "trasero" para evitar bucles
+    //Relacion: uno -> muchos (DetallesPedidos)
+    //(DetallesPedido) -> se definio [pedido] para el mappedBy
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
     private List<DetallesPedido> detallesPedidos;
 
-    //Relacion de muchos a uno con usuarios
+    //Relacion: muchos -> uno (Usuarios)
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
-    private Usuarios usuarios;
+    private Usuarios usuario;
 
-    //Relacion de muchos a uno con direcciones
+    //Relacion: muchos -> uno (Direccion)
     @ManyToOne
     @JoinColumn(name = "id_direccion", nullable = false)
     private Direccion direccion;
-    
-
 }
-
 

@@ -17,19 +17,17 @@ import java.util.Set;
 @Setter
 @Getter
 public class Roles {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_rol")
-    private Integer idRol;
-
+    private Long idRol;
     @Column(name="nombre_rol", unique = true, nullable = false, length = 50)
     private String nombreRol;
 
-    // --- Relación: Un Rol puede tener muchos Usuarios ---
-    // La gestionamos aquí para evitar bucles JSON
+    //Relacion: uno -> muchos (Usuarios)
+    //(Usuarios) -> se definio [rol] para el mappedBy
     @OneToMany(mappedBy = "rol", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference // Lado "trasero": no se serializa para evitar bucles
+    @JsonBackReference
     private List<Usuarios> usuarios;
 
 }

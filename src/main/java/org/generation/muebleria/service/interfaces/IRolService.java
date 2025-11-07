@@ -9,7 +9,7 @@ public interface IRolService {
     List<Roles> getAllRoles();
 
     // Obtener un rol por ID
-    Roles getRolById(Integer id);
+    Roles getRolById(Long id);
 
     // Obtener un rol por Nombre
     Roles getRolByNombre(String nombre);
@@ -18,9 +18,9 @@ public interface IRolService {
     Roles createRol(Roles rol);
 
     // Actualizar un rol
-    Roles updateRolById(Integer id, Roles rolActualizado);
+    Roles updateRolById(Long id, Roles rolActualizado);
 
     // Borrar un rol (Hard Delete)
-    void deleteRolById(Integer id);
+    void deleteRolById(Long id);
 
 }

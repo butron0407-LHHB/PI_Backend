@@ -18,15 +18,14 @@ public class ImagenesProducto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_imagen")
-    private Integer idImagen;
-
+    private Long idImagen;
     @Column(name="url_imagen", nullable = false, length = 500)
     private String urlImagen;
 
-    // --- Relación: Muchas imágenes pertenecen a un Producto ---
+    //Relacion muchos -> uno (Producto)
     @ManyToOne
     @JoinColumn(name = "id_producto", nullable = false)
-    @JsonBackReference // Lado "trasero": evita bucles al serializar
+    @JsonBackReference
     private Productos producto;
 
 }
