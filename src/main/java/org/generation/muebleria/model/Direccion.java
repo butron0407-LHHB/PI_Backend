@@ -20,20 +20,28 @@ public class Direccion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_direccion")
     private Long idDireccion;
+
     @Column(name = "tipo_direccion", nullable = false)
     private TipoDireccion tipoDireccion;
+
     @Column(name = "alias", nullable = false, length = 150)
     private String alias;
+
     @Column(name = "direccion", nullable = false, length = 300)
     private String direccion;
+
     @Column(name = "ciudad", nullable = false, length = 150)
     private String ciudad;
+
     @Column(name = "estado", nullable = false, length = 200)
     private String estado;
+
     @Column(name = "municipio", nullable = false, length = 200)
     private String municipio;
+
     @Column(name = "codigo_postal", nullable = false)
     private String codigoPostal;
+
     @Column(name = "es_predeterminada", columnDefinition = "TINYINT(1)")
     private Boolean esPredeterminada = false;
 
@@ -49,8 +57,3 @@ public class Direccion {
     private List<Pedidos> pedidos;
 }
 
-enum TipoDireccion {
-    ENVIO,
-    FACTURACION,
-    ENVIO_Y_FACTURACION
-}
