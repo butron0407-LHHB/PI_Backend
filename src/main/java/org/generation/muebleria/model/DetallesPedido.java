@@ -37,7 +37,7 @@ public class DetallesPedido {
 
     //Relacion mucho a uno pedidos
     @ManyToOne
-    @JoinColumn(name="id_pedidos", nullable = false)
+    @JoinColumn(name="id_pedido", nullable = false)
     private Pedidos pedidos;
 
 }
