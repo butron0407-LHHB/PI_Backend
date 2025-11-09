@@ -3,26 +3,23 @@ package org.generation.muebleria.repository;
 import org.generation.muebleria.model.Resenas;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 @Repository
 public interface ResenasRepository extends JpaRepository<Resenas, Long> {
 
-//    // Métodopara encontrar todas las reseñas activas
-//    List<Resenas> findByActivoTrue();
+    // Buscar todas las reseñas de un producto específico
+    List<Resenas> findByProductoIdProducto(Long idProducto);
 
-//    // Métodopara encontrar reseñas visibles
-//    List<Resenas> findByResenaVisibleTrueAndActivoTrue();
-//
-//    // Métodopara encontrar reseñas por calificación
-//    List<Resenas> findByCalificacionAndActivoTrue(Long calificacion);
+    // Buscar todas las reseñas de un usuario específico
+    List<Resenas> findByUsuarioIdUsuario(Long idUsuario);
 
-//    // Buscar reseñas ordenadas por fecha (más recientes primero)
-//    List<Resenas> findByActivoTrueOrderByFechaResenaDesc();
+    // Buscar todas las reseñas de un pedido específico
+    List<Resenas> findByPedidoIdPedido(Long idPedido);
 
-//    // Buscar reseñas con calificación mayor o igual a X
-//    List<Resenas> findByCalificacionGreaterThanEqualAndActivoTrue(Long calificacion);
+    // Buscar solo las reseñas visibles
+    List<Resenas> findByResenaVisible(Boolean visible);
+    List<Resenas> findByResenaVisibleTrue();
 
-//    // Contar reseñas activas
-//    Long countByActivoTrue();
 }
