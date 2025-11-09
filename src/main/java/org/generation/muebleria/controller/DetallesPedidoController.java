@@ -16,45 +16,31 @@ public class DetallesPedidoController {
 
     private final IDetallesPedidoService detallesPedidoService;
 
-    // url -> /api/detalles-pedido
+    // Obtener todos los detalles de pedidos
+    // GET -> http://localhost:8080/api/detalles-pedido
     @GetMapping
-    public List<DetallesPedido> getAllDetalles(){
+    public List<DetallesPedido> getAllDetalles() {
         return detallesPedidoService.getAllDetalles();
     }
 
-    // url -> /api/detalles-pedido/{detalleId}
-    @GetMapping(path = "/{detalleId}")
-    public Optional<DetallesPedido> getDetalleById(@PathVariable("detalleId") Long id){
-        return detallesPedidoService.getDetalleById(id);
-    }
-
-    // url -> /api/detalles-pedido/pedido/{pedidoId}
+    //  Obtener detalles por ID de pedido
+    // GET -> http://localhost:8080/api/detalles-pedido/pedido/{pedidoId}
     @GetMapping(path = "/pedido/{pedidoId}")
-    public List<DetallesPedido> getDetallesByPedido(@PathVariable("pedidoId") Long idPedido){
+    public List<DetallesPedido> getDetallesByPedido(@PathVariable("pedidoId") Long idPedido) {
         return detallesPedidoService.getDetallesByPedido(idPedido);
     }
 
-    // url -> /api/detalles-pedido/producto/{productoId}
-    @GetMapping(path = "/producto/{productoId}")
-    public List<DetallesPedido> getDetallesByProducto(@PathVariable("productoId") Long idProducto){
-        return detallesPedidoService.getDetallesByProducto(idProducto);
+    //  Obtener detalle específico por su ID
+    // GET -> http://localhost:8080/api/detalles-pedido/{detalleId}
+    @GetMapping(path = "/{detalleId}")
+    public Optional<DetallesPedido> getDetalleById(@PathVariable("detalleId") Long id) {
+        return detallesPedidoService.getDetalleById(id);
     }
 
-    // url -> /api/detalles-pedido/add
+    // Crear un nuevo detalle de pedido
+    // POST -> http://localhost:8080/api/detalles-pedido/add
     @PostMapping(path="/add")
-    public DetallesPedido addDetalle(@RequestBody DetallesPedidoRequest detalle){
+    public DetallesPedido addDetalle(@RequestBody DetallesPedidoRequest detalle) {
         return detallesPedidoService.addDetalle(detalle);
-    }
-
-    // url -> /api/detalles-pedido/update/{detalleId}
-    @PutMapping(path ="/update/{detalleId}")
-    public DetallesPedido updateDetalleById(@PathVariable("detalleId") Long id, @RequestBody DetallesPedidoRequest detalle){
-        return detallesPedidoService.updateDetalleById(id, detalle);
-    }
-
-    // url -> /api/detalles-pedido/delete/{detalleId}
-    @DeleteMapping(path="/delete/{detalleId}")
-    public void deleteDetalleById(@PathVariable("detalleId") Long id){
-        detallesPedidoService.deleteDetalleById(id);
     }
 }

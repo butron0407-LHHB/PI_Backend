@@ -8,36 +8,18 @@ import java.util.Optional;
 
 public interface IResenasService {
 
-    // Trae las reseñas visibles
+    // Obtener todas las reseñas visibles
     List<Resenas> getAllResenasVisible();
 
-    // Trae todas las reseñas visibles y ocultas
-    List<Resenas> getAllResenas();
-
-    // Trae reseña por Id
-    Optional<Resenas> getResenaById(Long id);
-
-    // Trae todas las reseñas de un producto específico
+    // Obtener reseñas por producto
     List<Resenas> getResenasByProducto(Long idProducto);
 
-    // Trae todas las reseñas de un usuario específico
+    // Obtener reseñas por usuario
     List<Resenas> getResenasByUsuario(Long idUsuario);
 
-    // Trae todas las reseñas de un pedido específico
-    List<Resenas> getResenasByPedido(Long idPedido);
+    // Obtener una reseña por ID
+    Optional<Resenas> getResenaById(Long id);
 
-    // Agregar reseña
-    Resenas addResena(ResenasRequest resenasRequest);
-
-    // Actualizar reseña
-    Resenas updateResenaById(Long id, ResenasRequest updateResenasRequest);
-
-    // Ocultar reseña
-    void ocultarResenaById(Long id);
-
-    // Mostrar reseña
-    void mostrarResenaById(Long id);
-
-    // Eliminar reseña
-    void deleteResenaById(Long id);
+    // Crear una nueva reseña
+    Resenas addResena(ResenasRequest resena);
 }
