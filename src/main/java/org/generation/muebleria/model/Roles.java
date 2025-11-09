@@ -1,33 +1,26 @@
 package org.generation.muebleria.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.util.List;
-import java.util.Set;
+import lombok.*;
 
 @Entity
-@Table(name="roles")
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
+@Table(name = "roles")
 @Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_rol")
+    @Column(name = "id_rol")
     private Long idRol;
-    @Column(name="nombre_rol", unique = true, nullable = false, length = 50)
+
+    @Column(name = "nombre_rol", nullable = false, unique = true, length = 50)
     private String nombreRol;
 
-    //Relacion: uno -> muchos (Usuarios)
-    //(Usuarios) -> se definio [rol] para el mappedBy
-    @OneToMany(mappedBy = "rol", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    private List<Usuarios> usuarios;
+    @Column(name = "descripcion", length = 200)
+    private String descripcion;
 
+    // Los métodos deberían ser generados automáticamente por Lombok:
+    // getNombreRol(), setNombreRol(), getDescripcion(), setDescripcion()
 }
