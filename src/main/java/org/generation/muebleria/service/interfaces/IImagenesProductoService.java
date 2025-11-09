@@ -1,20 +1,20 @@
 package org.generation.muebleria.service.interfaces;
 
-import org.generation.muebleria.model.ImagenesProducto;
+import org.generation.muebleria.dto.ImagenRequestDTO;
+// Ya no importamos ImagenResponseDTO
+import org.generation.muebleria.model.ImagenesProducto; // Importamos el Modelo
 import java.util.List;
 
 public interface IImagenesProductoService {
 
-    // Obtener todas las imágenes de un producto
-    List<ImagenesProducto> getImagesByProductId(Integer idProducto);
+    // Cambiado: ahora devuelve una lista del Modelo
+    List<ImagenesProducto> getImagesByProductId(Long idProducto);
 
-    // Obtener una imagen específica por su ID
-    ImagenesProducto getImageById(Integer id);
+    // Cambiado: ahora devuelve el Modelo
+    ImagenesProducto getImageById(Long id);
 
-    // Guardar una nueva imagen (asociada a un producto)
-    ImagenesProducto createImage(ImagenesProducto imagen);
+    // Cambiado: recibe DTO, pero devuelve el Modelo
+    ImagenesProducto createImage(ImagenRequestDTO imagenDTO);
 
-    // Borrar una imagen por su ID
-    void deleteImageById(Integer id);
-
+    void deleteImageById(Long id);
 }
