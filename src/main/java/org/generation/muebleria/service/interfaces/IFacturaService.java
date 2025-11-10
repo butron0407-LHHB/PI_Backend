@@ -1,6 +1,6 @@
 package org.generation.muebleria.service.interfaces;
 
-import org.generation.muebleria.dto.FacturaRequest;
+import org.generation.muebleria.dto.request.FacturaRequest;
 import org.generation.muebleria.model.Facturas;
 
 import java.util.List;

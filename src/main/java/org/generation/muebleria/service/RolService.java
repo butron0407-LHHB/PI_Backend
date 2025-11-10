@@ -1,6 +1,7 @@
 package org.generation.muebleria.service;
 
 import lombok.AllArgsConstructor;
+import org.generation.muebleria.dto.response.RolResponse;
 import org.generation.muebleria.model.Roles;
 import org.generation.muebleria.repository.RolRepository;
 import org.generation.muebleria.service.interfaces.IRolService;
@@ -59,5 +60,15 @@ public class RolService implements IRolService {
         // A diferencia de Categorias, Roles no tiene 'activo',
         // así que aplicamos un borrado físico (Hard Delete).
         rolRepository.deleteById(id);
+    }
+
+    public RolResponse mapToResponseDTO(Roles rol) {
+        if (rol == null) return null;
+
+        RolResponse dto = new RolResponse();
+        dto.setIdRol(rol.getIdRol());
+        dto.setNombreRol(rol.getNombreRol());
+
+        return dto;
     }
 }

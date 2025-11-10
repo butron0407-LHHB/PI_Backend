@@ -1,15 +1,13 @@
 package org.generation.muebleria.service;
 
 import lombok.AllArgsConstructor;
-import org.generation.muebleria.dto.FacturaRequest;
+import org.generation.muebleria.dto.request.FacturaRequest;
 import org.generation.muebleria.model.Facturas;
-import org.generation.muebleria.model.Pedidos; // Necesitamos el modelo de Pedidos
 import org.generation.muebleria.repository.FacturasRepository;
 import org.generation.muebleria.repository.PedidosRepository; // Necesitamos el repo de Pedidos
 import org.generation.muebleria.service.interfaces.IFacturaService;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Service
