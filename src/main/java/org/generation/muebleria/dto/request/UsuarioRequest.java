@@ -14,4 +14,5 @@ public class UsuarioRequest {
     private String telefono;
     // Opcional: Para admins que quieran cambiar el rol (si no, se asigna por defecto en el service)
     private Long idRol;
+    private String nombreRol;
 }

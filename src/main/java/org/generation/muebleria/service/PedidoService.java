@@ -6,6 +6,7 @@ import org.generation.muebleria.dto.response.DetallePedidoResponse;
 import org.generation.muebleria.dto.response.DireccionResponse;
 import org.generation.muebleria.dto.response.PedidoResponse;
 import org.generation.muebleria.dto.response.ProductoResponse;
+import org.generation.muebleria.dto.responseLite.PedidoResponseLite;
 import org.generation.muebleria.dto.responseLite.ProductoResponseLite;
 import org.generation.muebleria.dto.responseLite.UsuarioResponseLite;
 import org.generation.muebleria.model.*;
@@ -236,6 +237,23 @@ public class PedidoService implements IPedidosService{
 
             dto.setProducto(proDto);
         }
+        return dto;
+    }
+
+    public PedidoResponseLite mapToLiteDTO(Pedidos pedido) {
+        if (pedido == null) return null;
+
+        PedidoResponseLite dto = new PedidoResponseLite();
+
+        dto.setIdPedido(pedido.getIdPedido());
+        dto.setTotal(pedido.getTotal());
+        dto.setFechaCreacion(pedido.getFechaPedido());
+
+        // Si tu Pedidos tiene un campo estadoPedido (asumo que sí, es un Enum o String)
+        if (pedido.getEstadoPedido() != null) {
+            dto.setEstadoPedido(pedido.getEstadoPedido().name());
+        }
+
         return dto;
     }
 

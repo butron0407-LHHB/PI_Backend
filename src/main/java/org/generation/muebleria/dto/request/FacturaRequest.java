@@ -9,8 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class FacturaRequest {
-
+    private Long IdPedido;
     private String rfc;
     private String razonSocial;
-    // El idPedido vendrá por la URL, no en el body.
 }

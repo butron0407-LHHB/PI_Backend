@@ -1,6 +1,7 @@
 package org.generation.muebleria.controller;
 
 import lombok.AllArgsConstructor;
+import org.generation.muebleria.dto.request.UsuarioRequest;
 import org.generation.muebleria.dto.response.UsuarioResponse;
 import org.generation.muebleria.model.Usuarios;
 import org.generation.muebleria.service.interfaces.IUsuariosService;
@@ -25,7 +26,7 @@ public class UsuarioController {
     }
 
     @PutMapping(path = "/{userId}")
-    public UsuarioResponse updateProduct(@PathVariable("userId")Long id, @RequestBody Usuarios user){
+    public UsuarioResponse updateProduct(@PathVariable("userId")Long id, @RequestBody UsuarioRequest user){
         return usersService.updateUserById(id,user);
     }
 

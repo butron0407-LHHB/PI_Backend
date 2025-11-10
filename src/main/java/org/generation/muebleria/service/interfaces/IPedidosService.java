@@ -2,6 +2,7 @@ package org.generation.muebleria.service.interfaces;
 
 import org.generation.muebleria.dto.request.PedidoRequest;
 import org.generation.muebleria.dto.response.PedidoResponse;
+import org.generation.muebleria.dto.responseLite.PedidoResponseLite;
 import org.generation.muebleria.model.EstadoPedido;
 import org.generation.muebleria.model.Pedidos;
 
@@ -18,4 +19,6 @@ public interface IPedidosService {
     List<PedidoResponse> getPedidosByUsuario(Usuarios usuario);
     List<PedidoResponse> getPedidosByEstado(EstadoPedido estado);
     void cancelado(Long id);
+
+    PedidoResponseLite mapToLiteDTO(Pedidos pedido);
 }

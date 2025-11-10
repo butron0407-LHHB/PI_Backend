@@ -1,4 +1,5 @@
 package org.generation.muebleria.service.interfaces;
+import org.generation.muebleria.dto.request.UsuarioRequest;
 import org.generation.muebleria.dto.response.UsuarioResponse;
 import org.generation.muebleria.model.Usuarios;
 //import org.generation.muebleria.model.Rol;
@@ -10,9 +11,9 @@ public interface IUsuariosService {
 
     List<UsuarioResponse> getAllUsers();
     UsuarioResponse getUserById(Long id);
-    UsuarioResponse addUser(Usuarios user);
+    UsuarioResponse addUser(UsuarioRequest user);
     UsuarioResponse desactivarUserById(Long id);
-    UsuarioResponse updateUserById(Long id, Usuarios updatedUser);
-    boolean validateUser(Usuarios user);
+    UsuarioResponse updateUserById(Long id, UsuarioRequest updatedUser);
+    boolean validateUser(UsuarioRequest user);
 
 }
