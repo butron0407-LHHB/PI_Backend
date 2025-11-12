@@ -5,6 +5,8 @@ import org.generation.muebleria.dto.request.UsuarioRequest;
 import org.generation.muebleria.dto.response.UsuarioResponse;
 import org.generation.muebleria.model.Usuarios;
 import org.generation.muebleria.service.interfaces.IUsuariosService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class UsuarioController {
     private final IUsuariosService usersService;
+
 
     @GetMapping
     public List<UsuarioResponse> getAllUsers(){
@@ -39,5 +42,10 @@ public class UsuarioController {
     @PutMapping("/admin/{userId}/role")
     public UsuarioResponse changeUserRole(@PathVariable Long userId, @RequestParam String newRoleName) {
         return usersService.updateUserRole(userId, newRoleName);
+    }
+
+    @GetMapping(path="/by-email")
+    public UsuarioResponse getUserDetailsByEmail(@RequestParam("correo") String correo) {
+        return usersService.getUserByCorreo(correo);
     }
 }

@@ -3,6 +3,7 @@ package org.generation.muebleria.service;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.generation.muebleria.dto.request.UsuarioRequest;
+import org.generation.muebleria.dto.response.RolResponse;
 import org.generation.muebleria.dto.response.UsuarioResponse;
 import org.generation.muebleria.dto.responseLite.UsuarioResponseLite;
 import org.generation.muebleria.model.Roles;
@@ -195,6 +196,37 @@ public class UsuarioService implements IUsuariosService, UserDetailsService {
         dto.setCorreo(user.getCorreo());
 
         return dto;
+    }
+
+    @Override
+    public UsuarioResponse getUserByCorreo(String correo) {
+        // 1. Buscar al usuario
+        Optional<Usuarios> optionalUser = usuarioRepository.findByCorreo(correo);
+
+        if (optionalUser.isEmpty()) {
+            // Esto no debería pasar si el login ya fue exitoso, pero es una validación segura
+            throw new IllegalArgumentException("Usuario no encontrado con el correo: " + correo);
+        }
+
+        Usuarios usuarioEncontrado = optionalUser.get();
+
+        // 2. Mapear la Entidad a UsuarioResponse (la misma lógica de la respuesta anterior)
+        UsuarioResponse response = new UsuarioResponse();
+        response.setIdUsuario(usuarioEncontrado.getIdUsuario());
+        response.setNombre(usuarioEncontrado.getNombre());
+        response.setApellidos(usuarioEncontrado.getApellidos());
+        response.setCorreo(usuarioEncontrado.getCorreo());
+        response.setTelefono(usuarioEncontrado.getTelefono());
+        response.setActivo(usuarioEncontrado.getActivo());
+        response.setFechaRegistro(usuarioEncontrado.getFechaRegistro());
+        response.setFechaActualizacion(usuarioEncontrado.getFechaActualizacion());
+
+        RolResponse rolDto = new RolResponse();
+        rolDto.setIdRol(usuarioEncontrado.getRol().getIdRol());
+        rolDto.setNombreRol(usuarioEncontrado.getRol().getNombreRol());
+        response.setRol(rolDto);
+
+        return response; // Devuelve el DTO con la info del usuario
     }
 
 }
