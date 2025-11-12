@@ -1,0 +1,3 @@
+package org.generation.muebleria.dto.response;
+
+public record AuthResponse(String token, String correo, String rol) { }

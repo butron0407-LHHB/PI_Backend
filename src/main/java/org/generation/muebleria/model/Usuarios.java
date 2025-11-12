@@ -8,9 +8,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -20,7 +24,7 @@ import java.util.List;
 @Setter
 @Getter
 
-public class Usuarios {
+public class Usuarios implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_usuario")
@@ -67,4 +71,48 @@ public class Usuarios {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference
     private List<Direccion> direcciones;
+
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        // Asumiendo que tu campo de Rol en la entidad Usuarios se llama 'rol'
+        if (this.rol == null) {
+            // En un caso de fallo (no debería pasar), devolver una lista vacía o rol por defecto
+            return List.of(new SimpleGrantedAuthority("CLIENTE"));
+        }
+
+        // Convertir el nombre del rol de la entidad a un GrantedAuthority
+        // Tu campo de rol en el JSON era "nombreRol": "ADMINISTRADOR"
+        return List.of(new SimpleGrantedAuthority(this.rol.getNombreRol()));
+    }
+
+    @Override
+    public String getPassword() {
+        return passwordHas;
+    }
+
+    @Override
+    public String getUsername() {
+        return correo;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }

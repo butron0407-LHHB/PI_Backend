@@ -16,4 +16,5 @@ public interface IUsuariosService {
     UsuarioResponse updateUserById(Long id, UsuarioRequest updatedUser);
     boolean validateUser(UsuarioRequest user);
     UsuarioResponse updateUserRole(Long userId, String newRoleName);
+    UsuarioResponse getUserByCorreo(String correo);
 }
