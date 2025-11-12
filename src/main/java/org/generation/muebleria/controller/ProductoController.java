@@ -3,7 +3,6 @@ package org.generation.muebleria.controller;
 import lombok.AllArgsConstructor;
 import org.generation.muebleria.dto.ProductoRequest;
 import org.generation.muebleria.model.Productos;
-import org.generation.muebleria.service.interfaces.IProductoService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

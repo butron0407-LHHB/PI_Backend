@@ -3,7 +3,6 @@ package org.generation.muebleria.service;
 import lombok.AllArgsConstructor;
 import org.generation.muebleria.model.Usuarios;
 import org.generation.muebleria.repository.UsuariosRepository;
-import org.generation.muebleria.service.interfaces.IUsuariosService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

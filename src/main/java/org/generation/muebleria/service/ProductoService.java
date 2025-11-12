@@ -8,7 +8,6 @@ import org.generation.muebleria.model.Proveedores;
 import org.generation.muebleria.repository.CategoriaRepository;
 import org.generation.muebleria.repository.ProductoRepository;
 import org.generation.muebleria.repository.ProveedoresRepository;
-import org.generation.muebleria.service.interfaces.IProductoService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
