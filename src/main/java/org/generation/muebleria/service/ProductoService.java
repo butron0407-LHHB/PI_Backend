@@ -3,6 +3,7 @@ package org.generation.muebleria.service;
 import lombok.AllArgsConstructor;
 import org.generation.muebleria.dto.request.ProductoRequest;
 import org.generation.muebleria.dto.response.ProductoResponse;
+import org.generation.muebleria.dto.response.ImagenProductoResponse;
 import org.generation.muebleria.dto.responseLite.CategoriaResponseLite;
 import org.generation.muebleria.dto.responseLite.ProveedorResponseLite;
 import org.generation.muebleria.model.Categorias;
@@ -14,11 +15,9 @@ import org.generation.muebleria.repository.ProveedoresRepository;
 import org.generation.muebleria.service.interfaces.IProductoService;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
 
 @Service
 @AllArgsConstructor
@@ -29,6 +28,14 @@ public class ProductoService implements IProductoService {
     public CategoriaRepository categoriaRepository;
     public ProveedoresRepository proveedoresRepository;
 
+    @Override
+    public List<ProductoResponse> getAllProductsActiveWithImages() {
+        List<Productos> productosActivos = productoRepository.findByActivoTrueWithCategoriasAndProveedores();
+
+        return productosActivos.stream()
+                .map(this::mapToResponseDTO)
+                .collect(Collectors.toList());
+    }
 
     @Override
     public List<ProductoResponse> getAllProductsActive() {
@@ -214,6 +221,21 @@ public class ProductoService implements IProductoService {
             provDto.setNombre(producto.getProveedor().getNombre());
             dto.setProveedor(provDto);
         }
+
+        // ✅ COMENTA TEMPORALMENTE LA SECCIÓN DE IMÁGENES:
+
+        if (producto.getImagenesProducto() != null && !producto.getImagenesProducto().isEmpty()) {
+            List<ImagenProductoResponse> imagenesDto = producto.getImagenesProducto().stream()
+                    .map(imagen -> {
+                        ImagenProductoResponse imagenDto = new ImagenProductoResponse();
+                        imagenDto.setIdImagen(imagen.getIdImagen());
+                        imagenDto.setUrlImagen(imagen.getUrlImagen());
+                        return imagenDto;
+                    })
+                    .collect(Collectors.toList());
+            dto.setImagenes(imagenesDto);
+        }
+
 
         return dto;
     }

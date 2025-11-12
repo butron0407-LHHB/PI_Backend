@@ -1,15 +1,15 @@
 package org.generation.muebleria.dto.response;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.generation.muebleria.dto.responseLite.ProductoResponseLite;
 
 @Setter
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class ImagenProductoResponse {
-    private Long IdImagen;
+    private Long idImagen;
     private String urlImagen;
-
-    //referencia al producto al que pertenece
-    private ProductoResponseLite producto;
 }

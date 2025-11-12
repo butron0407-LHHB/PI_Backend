@@ -9,6 +9,7 @@ import org.generation.muebleria.dto.responseLite.ProveedorResponseLite;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Setter
 @Getter
@@ -23,10 +24,12 @@ public class ProductoResponse {
     private Boolean activo;
     private Boolean activoPorDependencia;
 
-    private LocalDateTime fechaPedido; // Fecha de creación
+    private LocalDateTime fechaPedido;
     private LocalDateTime fechaActualizacion;
 
-    //Uso de los DTOs Lite para las relaciones
     private CategoriaResponseLite categoria;
     private ProveedorResponseLite proveedor;
+
+    // ✅ AGREGA ESTA LÍNEA (descoméntala):
+    private List<ImagenProductoResponse> imagenes;
 }
