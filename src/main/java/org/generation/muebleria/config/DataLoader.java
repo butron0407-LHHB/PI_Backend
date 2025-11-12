@@ -22,16 +22,16 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        
+
         // --- Creación de Roles ---
-        if(rolRepository.findByNombreRol("ADMINISTRADOR").isEmpty()){
-            Roles adminRole = new Roles(null,"ADMINISTRADOR",null);
+        if (rolRepository.findByNombreRol("ADMINISTRADOR").isEmpty()) {
+            Roles adminRole = new Roles(null, "ADMINISTRADOR", null);
             rolRepository.save(adminRole);
             System.out.println("Rol administrador creado");
         }
 
-        if(rolRepository.findByNombreRol("CLIENTE").isEmpty()){
-            Roles adminRole = new Roles(null,"CLIENTE",null);
+        if (rolRepository.findByNombreRol("CLIENTE").isEmpty()) {
+            Roles adminRole = new Roles(null, "CLIENTE", null);
             rolRepository.save(adminRole);
             System.out.println("Rol cliente creado");
         }
@@ -42,7 +42,7 @@ public class DataLoader implements CommandLineRunner {
 
         // --- Creación de Categorías predefinidas por la mueblería ---
         // Verificamos si no hay categorías
-        if (categoriaRepository.count() == 0) { 
+        if (categoriaRepository.count() == 0) {
             System.out.println("Cargando categorías reales del sitio...");
 
             // 1. Guardar Categorías Padre (con y sin hijos)
@@ -51,20 +51,20 @@ public class DataLoader implements CommandLineRunner {
             Categorias dormitorio = categoriaRepository.save(new Categorias(null, "Dormitorio", true, null, null));
             Categorias comedores = categoriaRepository.save(new Categorias(null, "Comedores", true, null, null));
             Categorias lineaBlanca = categoriaRepository.save(new Categorias(null, "Línea blanca", true, null, null));
-            
+
             // Categorías padre sin hijos
             categoriaRepository.save(new Categorias(null, "Roperos", true, null, null));
             categoriaRepository.save(new Categorias(null, "Colchones", true, null, null));
             categoriaRepository.save(new Categorias(null, "Ofertas", true, null, null));
 
             // 2. Guardar Categorías Hijas (usando los objetos padre que guardamos)
-            
+
             // Hijas de Salas
             categoriaRepository.save(new Categorias(null, "Modulares de 4 piezas", true, null, salas));
             categoriaRepository.save(new Categorias(null, "Modulares de 5 piezas", true, null, salas));
             categoriaRepository.save(new Categorias(null, "Sofacamas", true, null, salas));
             categoriaRepository.save(new Categorias(null, "Reclinables", true, null, salas));
-            
+
             // Hijas de Dormitorio
             categoriaRepository.save(new Categorias(null, "Recámaras king size y matrimonial", true, null, dormitorio));
             categoriaRepository.save(new Categorias(null, "Cabeceras", true, null, dormitorio));
@@ -80,12 +80,12 @@ public class DataLoader implements CommandLineRunner {
             categoriaRepository.save(new Categorias(null, "Estufas", true, null, lineaBlanca));
             categoriaRepository.save(new Categorias(null, "Refrigeradores", true, null, lineaBlanca));
             categoriaRepository.save(new Categorias(null, "Microondas", true, null, lineaBlanca));
-            
+
             System.out.println("Categorías reales cargadas exitosamente.");
         }
 
         // --- Creación de Proveedores ---
-        if (proveedoresRepository.count() == 0) { 
+        if (proveedoresRepository.count() == 0) {
             System.out.println("Cargando proveedores de demo...");
 
             // (id, nombreEmpresa, nombre, telefono, correo, direccion, activo, fechaRegistro, fechaActualizacion, productos)
@@ -97,7 +97,7 @@ public class DataLoader implements CommandLineRunner {
 
             Proveedores p3 = new Proveedores(null, "Importadora del Norte", "Carlos Sánchez", "5555555555", "carlos@import.com", "Blvd. Industrial 404", false, null, null, null);
             proveedoresRepository.save(p3);
-            
+
             System.out.println("Proveedores de demo cargados.");
         }
 
@@ -105,3 +105,4 @@ public class DataLoader implements CommandLineRunner {
         // FIN - ACTUALIZACIÓN
         // ==========================================================
     }
+}
