@@ -40,4 +40,9 @@ public class UsuarioController {
     public UsuarioResponse changeUserRole(@PathVariable Long userId, @RequestParam String newRoleName) {
         return usersService.updateUserRole(userId, newRoleName);
     }
+
+    @GetMapping(path="/by-email")
+    public UsuarioResponse getUserDetailsByEmail(@RequestParam("correo") String correo) {
+        return usersService.getUserByCorreo(correo);
+    }
 }
