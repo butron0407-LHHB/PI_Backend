@@ -1,6 +1,7 @@
 package org.generation.muebleria.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jdk.jfr.Timestamp;
 import lombok.AllArgsConstructor;
@@ -25,6 +26,7 @@ public class Productos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_producto")
+    @JsonProperty("id")
     private Long idProducto;
     @Column(name="producto", nullable = false, length = 200)
     private String producto;
@@ -73,6 +75,8 @@ public class Productos {
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference
     private List<ImagenesProducto> imagenesProducto;
+
+
 
 
 }

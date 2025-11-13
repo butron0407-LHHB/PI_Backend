@@ -10,8 +10,8 @@ import java.util.Optional;
 public interface IProductoService {
     //trae los productos activos
     ProductoResponse mapToResponseDTO(Productos producto);
-
     List<ProductoResponse> getAllProductsActive();
+    List<ProductoResponse> getAllProductsActiveWithImages(); // ← MÉTODO AGREGADO
     List<ProductoResponse> getActiveProductosByCategoriaId(Long categoriaId);
     List<ProductoResponse> getActiveProductosByProveedorId(Long proveedorId);
     List<ProductoResponse> getProductosByCategoriaAndProveedor(Long categoriaId, Long proveedorId);

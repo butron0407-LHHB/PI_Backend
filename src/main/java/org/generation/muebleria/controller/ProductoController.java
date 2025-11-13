@@ -23,6 +23,12 @@ public class ProductoController {
         return productoService.getAllProductsActive();
     }
 
+    //[GET: USUARIO] -> url -> /api/productos/activos-con-imagenes
+    @GetMapping(path = "/activos-con-imagenes")
+    public List<ProductoResponse> getAllProductsActiveWithImages() {
+        return productoService.getAllProductsActiveWithImages();
+    }
+
     //[GET: USUARIO] -> url -> /api/productos/categoria/{categoriaId}
     @GetMapping(path="/d}")
     public List<ProductoResponse> getProductosActiveByCategoria(@PathVariable("categoriaId")Long id){
