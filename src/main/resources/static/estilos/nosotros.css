@@ -1,0 +1,333 @@
+/* ===================================
+   NOSOTROS.CSS - ESTILOS ESPECÍFICOS
+   Página: Sobre Nosotros
+   Nota: Footer y Navbar están en global.css
+   =================================== */
+
+/* ===== CONTENEDOR DEL HERO (estilo similar al navbar) ===== */
+.hero-container {
+    width: 98%;
+    margin: 10px auto 0 auto;
+    border-radius: 8px;
+    overflow: hidden; /* Para que las imágenes respeten el border-radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+/* =======HERO SECTION============= */
+.hero {
+  position: relative;
+  height: 760px; /* Altura fija como el carousel del index */
+  
+  /* --- Propiedades del fondo --- */
+  background-image: url('../assets/images/hero-muebleria.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* --- Centrado del contenido de texto --- */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* --- Overlay --- */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* --- Estilos para el contenido del Hero --- */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+/* OVERRIDE: Título blanco sobre fondo oscuro (sobrescribe global.css) */
+.hero-content h1 {
+  color: var(--text-white) !important;
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  font-family: var(--font-display);
+}
+
+#hero-title {
+  opacity: 0; /* Empieza invisible al cargar página */
+  transition: opacity 1.5s ease-in-out; /* animación de opacidad */
+}
+
+/* ======ABOUT SECTION (Texto principal sobre nosotros)============= */
+.about-section {
+  background-color: var(--background-light);
+  padding: 5rem 0;
+}
+
+.about-section h2 {
+  /* Hereda color verde de global.css - está bien */
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+/* ==========ESTADÍSTICAS=============== */
+.stats-section {
+  background-color: var(--primary);
+  padding: 4rem 0;
+}
+
+.stat-card {
+  padding: 2rem 1rem;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ==========FEATURES (Características)=============== */
+.features-section {
+  padding: 5rem 0;
+  background-color: var(--background-white);
+}
+
+.features-section h2 {
+  font-size: 2rem;
+  /* Hereda color verde de global.css - está bien */
+  margin-bottom: 2rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+  border-radius: var(--radius);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  background-color: var(--background-light);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  background-color: rgba(203, 153, 126, 0.1); /* Terracota suave */
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  background-color: rgba(203, 153, 126, 0.2);
+}
+
+.feature-card h3 {
+  /* Hereda color verde de global.css - está bien */
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.feature-card p {
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+/* ========CTA SECTION (Call to Action - Botones)================== */
+.cta-section {
+  background-color: var(--primary);
+  color: var(--text-white);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+/* OVERRIDE: Título blanco sobre fondo verde (sobrescribe global.css) */
+.cta-section h2 {
+  color: var(--text-white) !important;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* NOTA: Estos botones sobrescriben los de global.css para esta página específica */
+.cta-section .btn-custom-primary {
+  background-color: var(--secondary);  /* Terracota #CB997E */
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-section .btn-custom-primary:hover {
+  background-color: var(--secondary-hover);  /* Terracota más oscuro */
+  color: white;
+  transform: scale(1.05);
+}
+
+.cta-section .btn-custom-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 0.8rem 2rem;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-section .btn-custom-secondary:hover {
+  background-color: white;
+  color: var(--primary);  /* Verde */
+}
+
+/* ==========TEAM CODE&COFFEE============== */
+.card-img-top {
+  width: 150px !important;      /* Ancho fijo */
+  height: 150px !important;     /* Alto fijo */
+  object-fit: cover;            /* Recorta para llenar el espacio */
+  object-position: center;      /* Centra la imagen */
+}
+
+/* ==========RESPONSIVE DESIGN============= */
+
+/* Tabletas y pantallas medianas */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .hero-container {
+      width: 98%;
+      margin: 8px auto 0 auto;
+      border-radius: 6px;
+  }
+
+  .hero {
+    height: 550px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .about-section,
+  .features-section,
+  .cta-section {
+    padding: 3rem 0;
+  }
+  
+  .about-section p,
+  .features-section p,
+  .cta-section p {
+    font-size: 1rem;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .feature-card {
+    padding: 1.5rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-section .btn-custom-primary,
+  .cta-section .btn-custom-secondary {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .stat-label {
+    font-size: 1rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 576px) {
+  .hero-container {
+      width: 96%;
+      margin: 6px auto 0 auto;
+  }
+
+  .hero {
+      height: 400px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  
+  .features-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.3rem;
+  }
+}

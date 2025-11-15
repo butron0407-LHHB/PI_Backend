@@ -49,7 +49,7 @@ public class Usuarios implements UserDetails {
     private LocalDateTime fechaActualizacion;
 
     //Relacion: muchos -> uno (Roles)
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_rol", nullable = false)
     @JsonBackReference
     private Roles rol;
@@ -75,14 +75,13 @@ public class Usuarios implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Asumiendo que tu campo de Rol en la entidad Usuarios se llama 'rol'
         if (this.rol == null) {
-            // En un caso de fallo (no debería pasar), devolver una lista vacía o rol por defecto
+            // En un caso de fallo, devolver una lista vacía o rol por defecto
             return List.of(new SimpleGrantedAuthority("CLIENTE"));
         }
 
         // Convertir el nombre del rol de la entidad a un GrantedAuthority
-        // Tu campo de rol en el JSON era "nombreRol": "ADMINISTRADOR"
+        // el campo rol en el JSON era "nombreRol": "ADMINISTRADOR"
         return List.of(new SimpleGrantedAuthority(this.rol.getNombreRol()));
     }
 

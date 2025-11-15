@@ -2,26 +2,26 @@ package org.generation.muebleria.service;
 
 import lombok.AllArgsConstructor;
 // COMENTA TEMPORALMENTE ESTOS IMPORTS:
-// import org.generation.muebleria.dto.request.ImagenProductoRequest;
-// import org.generation.muebleria.dto.response.ImagenProductoResponse;
+import org.generation.muebleria.dto.request.ImagenProductoRequest;
+import org.generation.muebleria.dto.response.ImagenProductoResponse;
 import org.generation.muebleria.model.ImagenesProducto;
+import org.generation.muebleria.model.Productos;
 import org.generation.muebleria.repository.ImagenesProductoRepository;
 // COMENTA TEMPORALMENTE ESTA INTERFAZ:
-// import org.generation.muebleria.service.interfaces.IImagenesProductoService;
+import org.generation.muebleria.repository.ProductoRepository;
+import org.generation.muebleria.service.interfaces.IImagenesProductoService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
-public class ImagenesProductoService // COMENTA TEMPORALMENTE: implements IImagenesProductoService
-{
+public class ImagenesProductoService implements IImagenesProductoService {
     private final ImagenesProductoRepository imagenesProductoRepository;
+    private final ProductoRepository productoRepository;
 
-    // COMENTA TEMPORALMENTE TODOS LOS MÉTODOS QUE USAN ImagenProductoResponse:
-
-    /*
     @Override
     public List<ImagenProductoResponse> getAllImagenes() {
         List<ImagenesProducto> imagenes = imagenesProductoRepository.findAll();
@@ -45,11 +45,16 @@ public class ImagenesProductoService // COMENTA TEMPORALMENTE: implements IImage
     }
 
     @Override
-    public ImagenProductoResponse addImagen(ImagenProductoRequest imagenRequest) {
+    public ImagenProductoResponse addImagen(ImagenProductoRequest request) {
+        Productos producto = productoRepository.findById(request.getIdProducto())
+                .orElseThrow(() -> new IllegalArgumentException("Producto con ID " + request.getIdProducto() + " no encontrado."));
         ImagenesProducto nuevaImagen = new ImagenesProducto();
-        // ... lógica de guardado
-        ImagenesProducto imagenGuardada = imagenesProductoRepository.save(nuevaImagen);
-        return mapToResponseDTO(imagenGuardada);
+        nuevaImagen.setUrlImagen(request.getUrlImagen());
+        nuevaImagen.setProducto(producto);
+
+        ImagenesProducto saveImagen = imagenesProductoRepository.save(nuevaImagen);
+
+        return mapToResponseDTO(saveImagen);
     }
 
     @Override
@@ -80,10 +85,10 @@ public class ImagenesProductoService // COMENTA TEMPORALMENTE: implements IImage
         dto.setUrlImagen(imagen.getUrlImagen());
         return dto;
     }
-    */
+
 
     // ✅ MÉTODO TEMPORAL PARA QUE EL SERVICIO EXISTA
-    public String servicioTemporal() {
-        return "Servicio de imágenes temporalmente deshabilitado";
-    }
+    //public String servicioTemporal() {
+    //    return "Servicio de imágenes temporalmente deshabilitado";
+    //}
 }

@@ -1,17 +1,14 @@
 package org.generation.muebleria.service.interfaces;
 
-// COMENTA TEMPORALMENTE ESTOS IMPORTS:
-// import org.generation.muebleria.dto.request.ImagenProductoRequest;
-// import org.generation.muebleria.dto.response.ImagenProductoResponse;
-// import org.generation.muebleria.model.ImagenesProducto;
+import org.generation.muebleria.dto.request.ImagenProductoRequest;
+import org.generation.muebleria.dto.response.ImagenProductoResponse;
+import org.generation.muebleria.model.ImagenesProducto;
+
 import java.util.List;
 import java.util.Optional;
 
 public interface IImagenesProductoService {
 
-    // ✅ COMENTA TEMPORALMENTE TODOS LOS MÉTODOS QUE USAN DTOs FALTANTES:
-
-    /*
     // Obtener todas las imágenes (Admin)
     List<ImagenProductoResponse> getAllImagenes();
 
@@ -29,8 +26,8 @@ public interface IImagenesProductoService {
 
     // Eliminar una imagen
     void deleteImagen(Long idImagen);
-    */
 
-    // ✅ MÉTODO TEMPORAL PARA QUE LA INTERFAZ NO ESTÉ VACÍA
-    String servicioTemporal();
+    ImagenProductoResponse mapToResponseDTO(ImagenesProducto imagen);
+
+    //String servicioTemporal();
 }

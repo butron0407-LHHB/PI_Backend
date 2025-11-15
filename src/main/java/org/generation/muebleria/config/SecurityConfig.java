@@ -95,12 +95,44 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/", "/index.html","/css/**", "/js/**", "/images/**").permitAll()
+                        //Rutas Privadas (solo administradores)
+                        .requestMatchers(HttpMethod.POST,"/api/categorias/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.PUT,"/api/categorias/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.DELETE,"/api/categorias/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.POST,"/api/productos/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.PUT,"/api/productos/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.DELETE,"/api/productos/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.POST,"/api/imagenes/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.PUT,"/api/imagenes/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.DELETE,"/api/imagenes/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.GET,"/api/pedidos/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.GET,"/api/proveedores/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.POST,"/api/proveedores/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.PUT,"/api/proveedores/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.DELETE,"/api/proveedores/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.GET,"/api/resenas/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.DELETE,"/api/resenas/admin/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.GET,"/api/roles/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.POST,"/api/roles/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.PUT,"/api/roles/**").hasAnyAuthority("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.DELETE,"/api/roles/**").hasAnyAuthority("ADMINISTRADOR")
+                        //Rutas Publicas
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/api/productos/**").permitAll() // Permitimos ver productos
+                        .requestMatchers(HttpMethod.GET,"/api/categorias/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/api/imagenes/**").permitAll()
+                        .requestMatchers("/api/directions/**").permitAll()
+                        .requestMatchers("/api/facturas/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/api/pedidos/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/api/pedidos/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE,"/api/pedidos/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/api/proveedores/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/api/resenas/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/api/resenas/**").permitAll()
+                        .requestMatchers(HttpMethod.PUT,"/api/resenas/**").permitAll()
                         .requestMatchers("/api/users/**").authenticated()
-                        .requestMatchers("/api/categorias/admin/**").hasAnyAuthority("ADMINISTRADOR")
-                        .requestMatchers(HttpMethod.POST,"/api/products/**").hasAnyAuthority("ADMINISTRADOR") // Protegido
-                        .requestMatchers(HttpMethod.GET,"/api/products/**").permitAll() // Permitimos ver productos
-                        .anyRequest().authenticated() // El resto, protegido
+                        .anyRequest().permitAll()// El resto, protegido
                 )
                 .authenticationProvider(authenticationProvider())
                 // 4. Usamos el filtro que Spring inyectó al método

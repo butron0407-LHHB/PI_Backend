@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mueblería España - Politicas</title>
+  
+  <!-- Bootstrap 5 CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS-->
+   <link rel="stylesheet" href="../estilos/politicas.css">
+      <link rel="stylesheet" href="../estilos/global.css">
+
+</head>
+<body>
+
+    <!-- ========================================= -->
+    <!-- NAVBAR PRINCIPAL (Sticky, con búsqueda) -->
+    <!-- ========================================= -->
+    <div class="full-width-nav-container sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Navegación principal">
+
+            <div class="container-fluid">
+                
+                <button class="btn btn-outline-light d-lg-none me-2" type="button" 
+                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasProducts" 
+                        aria-controls="offcanvasProducts" aria-label="Abrir menú de productos">
+                    <i class="bi bi-list fs-4"></i>
+                </button>
+
+                <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                    <img src="../assets/mundo.png" alt="Logo Mueblería España" height="30" class="me-2">
+                    Mueblería España
+                </a>
+
+                <div class="collapse navbar-collapse" id="mainNavbarDesktop">
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./paginas/nosotros.html">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./paginas/contacto.html">Contacto</a>
+                        </li>
+
+                    </ul>                    
+                    <form class="d-flex me-3" role="search">
+                        <input class="form-control search-input" type="search" 
+                               placeholder="Buscar en la tienda" aria-label="Buscar productos">
+                    </form>
+                    
+                     <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" href="./paginas/carrito.html" aria-label="Carrito de compras">
+                                <i class="bi bi-cart-fill fs-4"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                                    <span class="visually-hidden">productos en el carrito</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link btn-action-user" href="#" role="button">
+                                <i class="bi bi-person-fill fs-4"></i>
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+
+                <div class="d-flex align-items-center d-lg-none">
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item ms-3">
+                            <a class="nav-link position-relative" href="./paginas/carrito.html" aria-label="Carrito de compras">
+                                <i class="bi bi-cart-fill fs-3"></i>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                                    2
+                                    <span class="visually-hidden">productos en el carrito</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link btn-action-user" href="#" aria-label="Mi cuenta">
+                                <i class="bi bi-person-fill fs-3"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="floating-nav-container">
+            <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" aria-label="Navegación de categorías">
+                <div class="container-fluid">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Salas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./paginas/salas.html">Ver todo</a></li>
+                                <li><a class="dropdown-item" href="./paginas/salas.html">Modulares de 4 piezas</a></li>
+                                <li><a class="dropdown-item" href="./paginas/salas.html">Modulares de 5 piezas</a></li>
+                                <li><a class="dropdown-item" href="./paginas/salas.html">Sofacamas</a></li>
+                                <li><a class="dropdown-item" href="./paginas/salas.html">Reclinables</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Dormitorio
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./paginas/dormitorios.html">Ver todo</a></li>
+                                <li><a class="dropdown-item" href="./paginas/dormitorios.html">Recámaras king size y matrimonial</a></li>
+                                <li><a class="dropdown-item" href="./paginas/dormitorios.html">Cabeceras</a></li>
+                                <li><a class="dropdown-item" href="./paginas/dormitorios.html">Bases</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Comedores
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./paginas/comedores.html">Ver todo</a></li>
+                                <li><a class="dropdown-item" href="./paginas/comedores.html">4 sillas</a></li>
+                                <li><a class="dropdown-item" href="./paginas/comedores.html">6 sillas</a></li>
+                                <li><a class="dropdown-item" href="./paginas/comedores.html">8 sillas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./paginas/roperos.html">Roperos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./paginas/colchones.html">Colchones</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="paginas/catalogo.html" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Línea blanca
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./paginas/lineaBlanca.html">Ver todo</a></li>
+                                <li><a class="dropdown-item" href="./paginas/lineaBlanca.html">Lavadoras</a></li>
+                                <li><a class="dropdown-item" href="./paginas/lineaBlanca.html">Estufas</a></li>
+                                <li><a class="dropdown-item" href="./paginas/lineaBlanca.html">Refrigeradores</a></li>
+                                <li><a class="dropdown-item" href="./paginas/lineaBlanca.html">Microondas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-danger" href="./paginas/ofertas.html">Ofertas</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasProducts" 
+         aria-labelledby="offcanvasProductsLabel">
+         
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasProductsLabel">PRODUCTOS</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button>
+        </div>
+        
+        <div class="offcanvas-body">
+            <div class="px-3 mb-3">
+                
+                <form class="d-flex" role="search">
+                    
+                    <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar">
+                    <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                </form>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a href="#collapseSalas" data-bs-toggle="collapse" role="button" 
+                       aria-expanded="false" aria-controls="collapseSalas">
+                        Salas <i class="bi bi-chevron-down float-end"></i>
+                    </a>
+                    <div class="collapse" id="collapseSalas">
+                        <ul class="list-unstyled ps-3 mt-2">
+                            <li><a href="./paginas/salas.html">Ver todo</a></li>
+                            <li><a href="./paginas/salas.html">Modulares de 4 piezas</a></li>
+                            <li><a href="./paginas/salas.html">Modulares de 5 piezas</a></li>
+                            <li><a href="./paginas/salas.html">Sofacamas</a></li>
+                            <li><a href="./paginas/salas.html">Reclinables</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="#collapseDormitorio" data-bs-toggle="collapse" role="button" 
+                       aria-expanded="false" aria-controls="collapseDormitorio">
+                        Dormitorio <i class="bi bi-chevron-down float-end"></i>
+                    </a>
+                    <div class="collapse" id="collapseDormitorio">
+                        <ul class="list-unstyled ps-3 mt-2">
+                            <li><a href="./paginas/dormitorios.html">Ver todo</a></li>
+                            <li><a href="./paginas/dormitorios.html">Recámaras king size y matrimonial</a></li>
+                            <li><a href="./paginas/dormitorios.html">Cabeceras</a></li>
+                            <li><a href="./paginas/dormitorios.html">Bases</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="#collapseComedores" data-bs-toggle="collapse" role="button" 
+                       aria-expanded="false" aria-controls="collapseComedores">
+                        Comedores <i class="bi bi-chevron-down float-end"></i>
+                    </a>
+                    <div class="collapse" id="collapseComedores">
+                        <ul class="list-unstyled ps-3 mt-2">
+                            <li><a href="./paginas/comedores.html">Ver todo</a></li>
+                            <li><a href="./paginas/comedores.html">4 sillas</a></li>
+                            <li><a href="./paginas/comedores.html">6 sillas</a></li>
+                            <li><a href="./paginas/comedores.html">8 sillas</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="list-group-item"><a href="./paginas/roperos.html">Roperos</a></li>
+                <li class="list-group-item"><a href="./paginas/colchones.html">Colchones</a></li>
+
+                <li class="list-group-item">
+                    <a href="#collapseLineaBlanca" data-bs-toggle="collapse" role="button" 
+                       aria-expanded="false" aria-controls="collapseLineaBlanca">
+                        Línea blanca <i class="bi bi-chevron-down float-end"></i>
+                    </a>
+                    <div class="collapse" id="collapseLineaBlanca">
+                        <ul class="list-unstyled ps-3 mt-2">
+                            <li><a href="./paginas/lineaBlanca.html">Ver todo</a></li>
+                            <li><a href="./paginas/lineaBlanca.html">Lavadoras</a></li>
+                            <li><a href="./paginas/lineaBlanca.html">Estufas</a></li>
+                            <li><a href="./paginas/lineaBlanca.html">Refrigeradores</a></li>
+                            <li><a href="./paginas/lineaBlanca.html">Microondas</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="./paginas/ofertas.html" class="fw-bold text-danger">Ofertas</a>
+                </li>
+            </ul>
+            <hr class="my-3">
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="paginas/nosotros.html">Nosotros</a></li>
+                <li class="list-group-item"><a href="paginas/contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+      
+      <!-- Links a las páginas -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#colecciones">Colecciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+        
+        <!-- EN ESTA PARTE ESTARAN LOS ICONOS DE BUSQUEDA, LOGIN, Y CARRITO -->
+        <div class="navbar-icons d-flex">
+          <i class="bi bi-search"></i>
+          <i class="bi bi-person"></i>
+          <i class="bi bi-cart"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Parte del Hero donde se insertara una imagen, fotografía, gráfico, video u otro tipo de diseño (de gran) que aparecera al inicio del sitio web -->
+<section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content">
+        <h1 id="hero-title">Políticas</h1>
+        <div class="hero-menu">
+          <ul class="nav nav-pills justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="#privacidad">
+                    <i class="bi bi-shield-check me-2"></i>Privacidad
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#envio">
+                    <i class="bi bi-truck me-2"></i>Envío
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#devoluciones">
+                    <i class="bi bi-arrow-repeat me-2"></i>Devoluciones
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#pagos">
+                    <i class="bi bi-credit-card me-2"></i>Pagos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#terminos">
+                    <i class="bi bi-file-text me-2"></i>Términos
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</section>
+  <!-- Texto principal en esta parte se escribe el texto sobre nosotros -->
+  <section class="about-section" id="nosotros">
+    <div class="container">
+      
+            <section id="privacidad" class="policy-section">
+                <div class="policy-card">
+                    <div class="policy-header">
+                        <div class="icon-wrapper">
+                        </div>
+                        <h2 class="text-center mb-5">Politicas de privacidad <i class="bi bi-shield-lock"></i> </h2>
+                    </div>
+                    
+                    <div class="policy-content">
+                        <p class="lead-text"></p>
+                            En Mueblería España, protegemos tu información personal 
+                            con los más altos estándares de seguridad y cumplimos con la normativa vigente de protección de datos.
+                        </p>
+
+                        <div class="content-block">
+                            <h3>Información que Recopilamos</h3>
+                            <p>Recopilamos la siguiente información cuando realizas una compra o te registras en nuestro sitio:</p>
+                            <ul>
+                                <li>Nombre completo y datos de contacto</li>
+                                <li>Dirección de envío y facturación</li>
+                                <li>Información de pago (procesada de forma segura)</li>
+                                <li>Historial de compras y preferencias</li>
+                                <li>Comunicaciones con nuestro servicio al cliente</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-block">
+                            <h3>Uso de tu Información</h3>
+                            <p>Utilizamos tu información personal para:</p>
+                            <ul>
+                                <li>Procesar y gestionar tus pedidos</li>
+                                <li>Coordinar entregas e instalaciones</li>
+                                <li>Proporcionar servicio al cliente y soporte técnico</li>
+                                <li>Enviarte actualizaciones sobre tu pedido</li>
+                                <li>Mejorar nuestros productos y servicios</li>
+                                <li>Cumplir con obligaciones legales y fiscales</li>
+                            </ul>
+                        </div>
+          <p class="text-center">
+            <div class="row g-4 mt-3">
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-lock-fill text-dark mb-3" style="font-size: 2rem;"></i>
+                                    <h3>Seguridad de Datos</h3>
+                                    <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tu información contra acceso no autorizado, pérdida o alteración.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-person-check-fill text-dark mb-3" style="font-size: 2rem;"></i>
+                                    <h3>Tus Derechos</h3>
+                                    <p>Tienes derecho a acceder, rectificar, eliminar o limitar el uso de tus datos personales. Contáctanos para ejercer tus derechos.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="content-block">
+                            <h3>Contacto</h3>
+                            <p>Para cualquier consulta sobre nuestra política de privacidad o para ejercer tus derechos, contáctanos en:</p>
+                            <p><strong>Email:</strong> <a href="mailto:privacidad@muebleriaespana.com">madridmuebleria@gmail.com</a></p>
+                            <p><strong>Teléfono:</strong> +52 712 115 4345</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apartado de características, texto que describe cómo lo logramos -->
+  <section class="features-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center mb-5">Politicas de envío  <i class="bi bi-truck"></i>  </h2>
+         <div class="row justify-content-center mt-4">
+        <div class="col-lg-10">
+          <p class="text-center">
+           Ofrecemos servicio de entrega profesional en un radio de 20 km de San Felipe del progreso, Edo Mex.  para electrodomésticos y colchones, con instalación incluida cuando sea necesario
+          </p>
+        </div>
+      </div>
+      <h2 class="text-center mb-5">Zonas de envío</h2>
+      <div class="row">
+        <!-- Primera característica -->
+        <div class="col-md-6 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon">
+            </div>
+            <h3>Sucursal</h3>
+            <div class="zone-badge zone-1"></div>
+                                        <h4> Agustín Iturbide S/N, Centro, 50640, San Felipe del Progreso, Estado de México</h4>
+                                        <p class="delivery-time"><i class="bi bi-clock"></i> 3-5 días laborables</p>
+                                        <p class="zone-description">Se entrega en una zona radial de hasta máximo 20 km del centro de San Felipe del Progreso, Estado de México. </p>
+            <p></p>
+          </div>
+        </div>
+        
+        <!-- Segunda característica -->
+        <div class="col-md-6 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon">
+        
+            </div>
+            <h3>Bodega</h3>
+            <div class="zone-badge zone-1"></div>
+                                        <h4>Atlacomulco-San Felipe del Progreso, Manzana 003, 50640, Ejido San Juan Jalpa, Estado de México</h4>
+                                        <p class="delivery-time"><i class="bi bi-clock"></i> 3-5 días laborables</p>
+                                        <p class="zone-description"> Se entrega en una zona radial de hasta máximo 20 km del centro de San Felipe del Progreso, Estado de México./p>
+            <p></p>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-10">
+          <p class="text-center">
+           <div class="content-block">
+                            <h2 class="text-center mb-5">Proceso de entrega </h2>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="container text-center">
+  <div class="row g-2">
+    <div class="col-6">
+      <div class="p-3"><h4>1. Confirmación de pedido</h4> <p>Recibirás un email de confirmación con los detalles de tu compra y el plazo estimado de entrega.</p></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3"> <h4>2. Preparación</h4>
+                                        <p>Preparamos tu pedido en nuestro almacén y verificamos que todo esté en perfectas condiciones.</p></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3"><h4>3. Contacto previo </h4><p>Te llamaremos 24-48 horas antes para coordinar la fecha y hora de entrega.</p></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3">  <h4>4. Entrega e Instalación</h4><p>Nuestro equipo entregará e instalará tu producto, retirando el embalaje.</p></div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+ <div class="content-block">
+                            <h3>Servicios Incluidos</h3>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <br>
+                                    <div class="service-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Entrega en planta o domicilio</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <div class="service-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Instalación básica incluida</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="service-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Retirada de embalajes</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="service-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Verificación de funcionamiento</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<br>
+<br>
+                        <div class="alert-box">
+                            <div>
+                                 <i class="bi bi-info-circle-fill"></i> <strong>Importante:</strong> Es necesario que haya alguien presente en la dirección de entrega. Si no es posible recibir el pedido, se coordinará una nueva fecha de entrega que puede conllevar costes adicionales.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                                 
+  </section>
+ 
+  <!-- Proceso de devoluciones -->
+  <section class="cta-section" id="contacto">
+    <div class="container">
+            <section id="devoluciones" class="policy-section">
+                <div class="policy-card">
+                    <div class="policy-header">
+                     
+                      <div>
+    <h4 class="text-center mb-5" style="font-size: 2.5rem;">Política de Devoluciones<i class="bi bi-arrow-repeat"></i></h4>
+</div>
+                    
+                    <div class="policy-content">
+                       <div class="guarantee-badge">
+    <div class="guarantee-item text-center">
+    <i class="bi bi-shield-check"></i>
+    <span>Garantía de 1 año en lavadoras, estufas y refrigeradores</span>
+</div>
+    <div class="guarantee-item text-center">
+        <i class="bi bi-shield-check"></i>
+        <span>Garantía de 3 meses en planchas, licuadoras y hornos de microondas</span>
+    </div>
+</div>
+                        <br>
+                        <br>
+                        </div>
+                         <br>
+                          <div class="policy-content">
+                        <p class="lead-text"></p>
+                         <div>
+    <h4 class="mb-5" style="font-size: 2.5rem;">Condiciones para devoluciones</i></h4>
+</div>
+                            <br>
+                                <li>El producto debe estar en su estado original, sin usar y con todos sus accesorios</li>
+                                <li>Debe conservar el embalaje original en buen estado</li>
+                                <li>Se debe presentar la factura o comprobante de compra</li>
+                                <li>Los productos personalizados o hechos a medida no admiten devolución</li>
+                                <li>Los colchones deben mantener su protección higiénica original intacta</li>
+                        </div>
+                        <br>
+                        <br>
+                         
+                        <div class="content-block">
+                            <h3>Proceso de Devolución</h3>
+                            <br>
+                            <div class="steps-grid">
+                                <div class="step-card">
+                                    <h4>1. Solicitud</h4>
+                                    <p>Contacta con nuestro servicio de atención al cliente</p>
+                                </div>
+                                <div class="step-card">
+                                    <h4>2. Autorización</h4>
+                                    <p>Recibirás un número de autorización de devolución</p>
+                                </div>
+                                <div class="step-card">
+                                    <h4>3. Recogida</h4>
+                                    <p>Coordinamos la recogida del producto en tu domicilio</p>
+                                </div>
+                                <div class="step-card">
+                                    <h4>4. Inspección</h4>
+                                    <p>Verificamos el estado del producto devuelto</p>
+                                </div>
+                                <div class="step-card">
+                                    <h4>5. Reembolso</h4>
+                                    <p>Procesamos el reembolso en 7-10 días laborables</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <h4><i class="bi bi-cash-coin me-2"></i>Costes de Devolución</h4>
+                                    <p>Los gastos de recogida y transporte de la devolución correrán a cargo del cliente, excepto en casos de productos defectuosos o errores en el envío.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <h4><i class="bi bi-arrow-left-right me-2"></i>Cambios</h4>
+                                    <p>Si deseas cambiar un producto por otro modelo, puedes hacerlo dentro del plazo de 30 días. Se aplicarán las diferencias de precio correspondientes.</p>
+                                </div>
+                            </div>
+                        </div>
+
+            </section>
+    </div>
+  </section>
+
+  <!--=====Politicas de pago ==========-->
+  <section class="team-section py-5 bg-light">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="display-5">Políticas de Pago <i class="bi bi-credit-card-2-front"></i></h2>
+
+            <section id="pagos" class="policy-section">
+                <div class="policy-card">
+                    <div class="policy-header">
+                        <div class="icon-wrapper">
+                    <br>
+                    <div class="policy-content">
+                        <p class="lead-text">
+                            Ofrecemos múltiples opciones de pago seguras y flexibles para tu comodidad, con la garantía de las plataformas de pago más confiables.
+                        </p>
+                     <br>
+                        <div class="content-block">
+                            <h3>Métodos de Pago Aceptados</h3>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-3-center">
+                                    <div class="payment-card">
+                                        <i class="bi bi-credit-card" style="font-size: 2.5rem;"></i>
+                                        <h4>Tarjetas</h4>
+                                        <p>Visa, Mastercard, American Express</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3-center">
+                                    <div class="payment-card">
+                                        <i class="bi bi-bank" style="font-size: 2.5rem;"></i>
+                                        <h4>Transferencia</h4>
+                                        <p>Transferencia bancaria directa</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="financing-box">
+                            <h4><i class="bi bi-calendar-check me-2"></i>Financiación Disponible</h4>
+                            <p>Ofrecemos opciones de financiación flexibles</p>
+                        </div>
+
+                                <div><span><strong>3 meses sin intereses</strong> </span></div>
+                               
+                                <div><span><strong>6 meses sin intereses</strong> </span></div>
+                               
+                        </div>
+                            <p class="mt-3"><small>Sujeto a aprobación de la entidad financiera. Consulta condiciones.</small></p>
+                        </div>
+
+                        <div class="content-block">
+                            <h3>Seguridad en los Pagos</h3>
+                            <p>Tu seguridad es nuestra prioridad. Todas las transacciones están protegidas con:</p>
+                            
+                            <div class="security-badges">
+                                <span class="badge"><i class="bi bi-shield-lock-fill me-1"></i> Cifrado SSL</span>
+                                <span class="badge"><i class="bi bi-check-circle-fill me-1"></i> PCI DSS Compliant</span>
+                                <span class="badge"><i class="bi bi-shield-check me-1"></i> 3D Secure</span>
+                                <span class="badge"><i class="bi bi-lock-fill me-1"></i> Protección de Datos</span>
+                            </div>
+                        </div>
+
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <h4>Confirmación de Pago</h4>
+                                    <p>Recibirás una confirmación inmediata por email una vez procesado el pago. Tu pedido se preparará en un plazo máximo de 24 horas.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <h4>Facturación</h4>
+                                    <p>Emitimos factura electrónica para todas las compras. La recibirás por email junto con la confirmación del pedido.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+                <br>
+                <br>
+            <section id="terminos" class="policy-section">
+                <div class="policy-card">
+                    <div class="policy-header">
+                        <div class="icon-wrapper">
+                           
+                        </div>
+                        <h2>Términos y Condiciones  <i class="bi bi-file-text"></i></h2>
+                    </div>
+                    
+                    <div class="policy-content">
+                        <p class="lead-text">
+                            Al realizar una compra en Mueblería España, aceptas los siguientes términos y condiciones de venta.
+                        </p>
+
+                        <div class="content-block">
+                            <h3>1. Información General</h3>
+                            <p><strong>Razón Social:</strong> Mueblería España S.L.</p>
+                            <p><strong>Domicilio Social:</strong> Calle Principal 123, 28001 Madrid, España</p>
+                            <p><strong>Email:</strong> <a href="mailto:info@muebleriaespana.com">info@muebleriaespana.com</a></p>
+                            <p><strong>Teléfono:</strong> +34 900 123 456</p>
+                        </div>
+
+                        <div class="content-block">
+                            <h3>2. Objeto del Contrato</h3>
+                            <p>Estos términos regulan la compra-venta de electrodomésticos, colchones y productos relacionados a través de nuestro sitio web y tiendas físicas.</p>
+                        </div>
+
+                        <div class="content-block">
+                            <h3>3. Precios y Ofertas</h3>
+                            <ul>
+                                <li>Todos los precios incluyen IVA (21%) salvo indicación contraria</li>
+                                <li>Los precios pueden variar sin previo aviso</li>
+                                <li>Las ofertas y promociones tienen validez limitada según se indique</li>
+                                <li>Los gastos de envío se calculan según la zona de entrega</li>
+                                <li>Nos reservamos el derecho de corregir errores tipográficos en precios</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-block">
+                            <h3>4. Proceso de Compra</h3>
+                            <p>El contrato de compra-venta se perfecciona cuando:</p>
+                            <ul>
+                                <li>El cliente realiza el pedido a través de nuestra web o tienda</li>
+                                <li>Recibe la confirmación del pedido por email</li>
+                                <li>Se procesa el pago correctamente</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-block">
+                            <h3>5. Garantías</h3>
+                            <p>Todos nuestros productos cuentan con:</p>
+                            <ul>
+                                <li>Garantía legal de conformidad de 3 meses (electrodomésticos)</li>
+                                <li>Garantía del fabricante según especificaciones del producto</li>
+                                <li>Servicio técnico oficial autorizado</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-block">
+                            <h3>6. Derecho de Desistimiento</h3>
+                            <p>Según la Ley General para la Defensa de los Consumidores y Usuarios, tienes derecho a desistir del contrato en un plazo de 14 días naturales sin necesidad de justificación.</p>
+                            <p><strong>Excepciones:</strong> No aplica a productos personalizados, productos precintados que hayan sido desprecintados por razones de higiene (colchones), o productos hechos a medida.</p>
+                        </div>
+
+                        <div class="content-block">
+                            <h3>7. Responsabilidad</h3>
+                            <p>Mueblería España no se hace responsable de:</p>
+                            <ul>
+                                <li>Daños causados por uso inadecuado del producto</li>
+                                <li>Instalaciones realizadas por terceros no autorizados</li>
+                                <li>Retrasos en la entrega por causas de fuerza mayor</li>
+                                <li>Incompatibilidades técnicas no especificadas en la ficha del producto</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-block">
+                            <h3>8. Protección de Datos</h3>
+                            <p>Tus datos personales serán tratados conforme a nuestra Política de Privacidad y al Reglamento General de Protección de Datos. Puedes ejercer tus derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición contactando con nosotros.</p>
+                        </div>
+
+                        <div class="content-block">
+                            <h3>9. Resolución de Conflictos</h3>
+                            <p>Para cualquier controversia derivada de la compra, puedes acudir a:</p>
+                            <ul>
+                                <li>Nuestro servicio de atención al cliente en sucursal</li>
+                                <li>Juntas Arbitrales de Consumo</li>
+                                <li>Tribunales competentes de tu domicilio</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-block">
+                            <h3>10. Legislación Aplicable</h3>
+                            <p>Estos términos se rigen por la legislación española. En caso de conflicto entre las partes, serán competentes los juzgados y tribunales del domicilio del consumidor.</p>
+                        </div>
+
+                        <div class="alert-box mt-4">
+                        
+                            <div>
+                                <strong>Última actualización:</strong> Enero 2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+
+      
+      </div>
+    </div>
+  </section>
+
+   <!-- ========== NUEVO FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Columna 1: Sobre Nosotros -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div class="footer-widget">
+                        <h4 class="widget-title">Mueblería España</h4>
+                        <p>Creamos hogares combinando la tradición artesanal con las mejores marcas de electrodomésticos del mercado.</p>
+                        <div class="social-links mt-4">
+                            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces Rápidos -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <div class="footer-widget">
+                        <h4 class="widget-title">Enlaces</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="/paginas/nosotros.html">Sobre Nosotros</a></li>
+                            <li><a href="/paginas/catalogo.html">Catálogo</a></li>
+                            <li><a href="/paginas/contacto.html">Contacto</a></li>
+                            <li><a href="/paginas/admin.html">Panel Admin</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Columna 3: Atención al Cliente -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-widget">
+                        <h4 class="widget-title">Atención al Cliente</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="paginas/preguntas.html">Preguntas Frecuentes</a></li>
+                            <li><a href="#">Métodos de Pago</a></li>
+                            <li><a href="paginas/politicas.html">Políticas </a></li>
+                            <li><a href="paginas/garantia.html">Garantías</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Columna 4: Contacto -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="widget-title">Contacto</h4>
+                        <ul class="list-unstyled contact-info">
+                            <li>
+                                <i class="bi bi-geo-alt-fill me-2"></i>
+                                <span>San Felipe del Progreso, Edo. de México, 50640</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-telephone-fill me-2"></i>
+                                <a href="tel:+527120000000">+52 (712) 000-0000</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope-fill me-2"></i>
+                                <a href="mailto:contacto@muebleria.com">contacto@muebleria.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ========== BARRA DE COPYRIGHT ========== -->
+    <div class="copyright-bar">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Mueblería España. Todos los derechos reservados.</p>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+
+                <div class="col-md-6 d-none d-md-block p-0 modal-video-col">
+                  <video id="loginVideo" autoplay muted playsinline>
+                    <source src="/assets/inicio.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                  </video>
+                </div>
+
+                <div class="col-md-6 p-4 p-md-5">
+                  
+                  <div class="d-flex justify-content-end">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+
+                  <h2 class="mb-4">Bienvenido</h2>
+                  
+                  <form>
+    <div class="mb-3">
+        <label for="emailInput" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="emailInput" placeholder="tu@email.com">
+    </div>
+    
+    <div class="mb-3">
+        <label for="passwordInput" class="form-label">Contraseña</label>
+        <div class="position-relative">
+            <input 
+                type="password" 
+                class="form-control" 
+                id="passwordInput" 
+                placeholder="Ingresa tu contraseña"
+                required
+            >
+            <button 
+                type="button" 
+                id="toggleLoginPassword"
+                class="btn position-absolute top-0 end-0 h-100"
+            >
+                <i class="bi bi-eye"></i>
+            </button>
+        </div>
+        <div class="invalid-feedback">
+            La contraseña debe tener 8 caracteres como mínimo.
+        </div>
+    </div>
+</form>
+                   <div class="mb-3 text-end">
+                   <a href="#" class="text-decoration-none" style="color: #CB997E;" data-bs-toggle="modal" data-bs-target="#recoveryModal" data-bs-dismiss="modal">
+                     ¿Olvidaste tu contraseña? </a></div>
+
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-primary btn-lg">Ingresar</button>
+                </div>
+              </form>
+
+              <hr class="my-4">
+
+              <div class="text-center">
+                <p>¿No tienes una cuenta? 
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Regístrate</a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<div class="modal fade" id="recoveryModal" tabindex="-1" aria-labelledby="recoveryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-4 p-md-5">
+        
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="text-center mb-4">
+        <i class="bi bi-key fs-1" style="color: #CB997E;"></i>
+         <h2 class="mt-3">Recuperar Contraseña</h2>
+          <p class="text-muted">Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.</p>
+        </div>
+        
+        <form id="recoveryForm">
+          <div class="mb-3">
+            <label for="recoveryEmail" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="recoveryEmail" placeholder="tu@email.com" required>
+          </div>
+
+          <div id="recoveryAlertMessage" class="alert d-none" role="alert"></div>
+
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary btn-lg">Enviar Enlace</button>
+          </div>
+        </form>
+
+        <hr class="my-4">
+
+        <div class="text-center">
+          <p>¿Recordaste tu contraseña? 
+            <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Inicia Sesión</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-md-6 p-4 p-md-5">
+
+              <div class="d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <h2 class="mb-4">Crea tu Cuenta</h2>
+              
+              <form id="registerForm"> 
+                
+                <div class="mb-3">
+                  <label for="fullname" class="form-label">Nombre Completo</label>
+                  <input type="text" class="form-control" id="fullname" placeholder="Ej. Nombre Apellido1 Apellido2" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="username" class="form-label">Correo Electrónico</label>
+                  <input type="email" class="form-control" id="username" placeholder="tu@email.com" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Número de Teléfono</label>
+                  <input type="tel" class="form-control" id="phone" placeholder="Ej. 7221234567" pattern="[0-9]{10}" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Contraseña</label>
+                  <div class="input-group"> 
+                    <input type="password" class="form-control" id="password" required>
+                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                      <i class="bi bi-eye" id="eyeIcon"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                  <div class="input-group"> 
+                    <input type="password" class="form-control" id="confirmPassword" required>
+                    <button class="btn btn-outline-secondary" type="button" id="toggleConfirmPassword">
+                      <i class="bi bi-eye" id="eyeIconConfirm"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div id="alertMessage" class="alert d-none" role="alert"></div>
+
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+                </div>
+              </form>
+
+              <hr class="my-4">
+
+              <div class="text-center">
+                <p>¿Ya tienes una cuenta? 
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Inicia Sesión</a>
+                </p>
+              </div>
+
+            </div>
+
+            <div class="col-md-6 d-none d-md-block p-0 modal-video-col">
+              <video id="registerVideo" autoplay muted playsinline>
+                <source src="/assets/registro.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+              </video>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<div class="modal fade" id="welcomeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center pb-5">
+        <div class="mb-4">
+            <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <i class="bi bi-person-circle fs-1 text-primary"></i>
+            </div>
+        </div>
+        
+        <h3 class="mb-2" id="welcomeUserName">¡Bienvenido!</h3>
+        <p class="text-muted mb-4" id="welcomeUserEmail">usuario@ejemplo.com</p>
+        
+        <div class="d-grid gap-2 col-8 mx-auto">
+            <button type="button" class="btn btn-danger mt-2" id="btnLogout">
+                <i class="bi bi-box-arrow-right me-2"></i>Cerrar Sesión
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../scripts/registro.js"></script>
+    <script src="../scripts/login.js"></script>
+    <script src="../scripts/recuperacion.js"></script>
+</body>
+</html>

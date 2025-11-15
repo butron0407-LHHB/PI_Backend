@@ -30,7 +30,7 @@ public class ProductoController {
     }
 
     //[GET: USUARIO] -> url -> /api/productos/categoria/{categoriaId}
-    @GetMapping(path="/d}")
+    @GetMapping(path="/categoria/categoriaId")
     public List<ProductoResponse> getProductosActiveByCategoria(@PathVariable("categoriaId")Long id){
         return productoService.getActiveProductosByCategoriaId(id);
     }
